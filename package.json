@@ -1,0 +1,32 @@
+{
+  "name": "caitrinandcolin",
+  "version": "1.0.0",
+  "description": "Wedding Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frndcolin/CaitrinAndColin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frndcolin/CaitrinAndColin/issues"
+  },
+  "homepage": "https://github.com/frndcolin/CaitrinAndColin#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.4",
+    "pug": "^2.0.0-rc.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-concat-css": "^3.0.0"
+  }
+}
