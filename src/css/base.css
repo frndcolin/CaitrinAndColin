@@ -1,0 +1,12 @@
+html, body {
+    box-sizing: border-box;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-family: 'Prata', serif;
+    font-size: 2rem;
+    text-align: center;
+}
