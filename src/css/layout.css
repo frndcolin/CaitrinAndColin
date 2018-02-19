@@ -35,3 +35,7 @@
     height: 380px;
     margin: 0 auto;
 }
+
+#photographs .container {
+    padding-top: 60px
+}
