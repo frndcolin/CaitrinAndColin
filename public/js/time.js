@@ -1,6 +1,6 @@
 self.importScripts('../vendor/luxon.js');
 var DateTime = self.luxon.DateTime,
-    selections = ['months', 'weeks', 'days', 'hours', 'minutes', 'seconds'],
+    selections = ['months', 'days', 'hours', 'minutes', 'seconds'],
     theBigDay = DateTime.fromISO('2018-12-01T17:30:00');
 
 function checkNum(num) {
@@ -16,7 +16,6 @@ function getTime() {
         minutes: checkNum(count.minutes),
         hours: checkNum(count.hours),
         days: checkNum(count.days),
-        weeks: checkNum(count.weeks),
         months: checkNum(count.months)
     };
 }

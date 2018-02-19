@@ -1,0 +1,198 @@
+/*-----------------------------------------------------------------------*/
+/*-------------------------GENERAL ELMNTS/STYLES-------------------------*/
+/*-----------------------------------------------------------------------*/
+:root {
+    --blue: #28324A;
+    --gold: #D6A319;
+    --black: #444444;
+    --white: #f9f9f9;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 40px auto 0;
+    background-color: #D6A319;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+/*-----------------------------------------------------------------------*/
+/*-----------------------------------HEADER------------------------------*/
+/*-----------------------------------------------------------------------*/
+.names {
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.name {
+    display: inline-block;
+    
+}
+.and {
+    font-family: 'Great Vibes';
+    font-weight: 100;
+    font-size: 64px
+}
+.down-arrow {
+    height: 50px;
+    width: 50px;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+.arrow {
+    transition: all 0.2s;
+}
+.arrow:hover {
+    transform: scale(1.2)
+}
+
+/*-----------------------------------------------------------------------*/
+/*-----------------------------------WELCOME------------------------------*/
+/*-----------------------------------------------------------------------*/
+.countdown {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.date {
+    border-radius: 2px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 30px 1fr;
+    justify-items: center;
+    width: 95px;
+    height: 90px;
+    background-color: #28324A;
+    margin: 60px 10px 0;
+    box-shadow: 4px 4px 18px rgba(0, 0, 0, 0.2), 2px 2px 12px rgba(0, 0, 0, 0.5);
+}
+.date-title {
+    color: #FFEECA;
+    align-self: end;
+    font-family: 'Raleway';
+    font-size: 16px;
+    font-weight: 200;
+    padding: 0;
+    margin: 0;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+[class*="--"] {
+    font-family: 'Prata';
+    font-size: 48px;
+    align-self: end;
+    color: #D6A319;
+}
+/*-----------------------------------------------------------------------*/
+/*-----------------------------------EVENT------------------------------*/
+/*-----------------------------------------------------------------------*/
+.event-content {
+    color: #FFEECA;
+    text-align: center;
+}
+.event-content p {
+    width: 70%;
+    margin: 0 auto;
+}
+.event-img {
+    background-image: url('https://source.unsplash.com/1600x900/?wedding,engagement');
+    background-size: cover;
+}
+.schedule {
+    list-style: none;
+    margin: 30px 0 0;
+    padding: 0;
+}
+.event {
+    letter-spacing: 0.5px;
+    margin: 12px 0;
+}
+
+/*-----------------------------------------------------------------------*/
+/*-------------------------------THINGS TO DO----------------------------*/
+/*-----------------------------------------------------------------------*/
+.boston {
+    color: #FFEECA;
+    background-image: linear-gradient(rgba(40, 50, 74, 0.8), rgba(75, 85, 99, 0.5)), url('https://source.unsplash.com/1600x900/?boston, city');
+    background-size: cover;
+}
+.cape-cod {
+    color: #FFEECA;
+    background-image: linear-gradient(rgba(214, 123, 25, 0.6), rgba(40, 50, 74, 0.4)), url('https://source.unsplash.com/1600x900/?beach');
+    background-size: cover;
+}
+
+/*-----------------------------------------------------------------------*/
+/*-----------------------------------GALLERY-----------------------------*/
+/*-----------------------------------------------------------------------*/
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 160px 160px 160px 160px;
+    grid-template-areas: 
+        "lg-1 lg-1 sm-1 tl-1"
+        "lg-1 lg-1 sm-2 tl-1"
+        "tl-2 lg-2 lg-2 sm-3"
+        "tl-2 lg-2 lg-2 sm-4";
+    grid-gap: 10px;
+    grid-auto-flow: dense;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 80%;
+}
+
+.gallery-item {    
+    background-color: #333;
+    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: auto;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0.8;
+}
+
+.img-lg-1 {
+    grid-area: lg-1;
+}
+.img-lg-2 {
+    grid-area: lg-2;
+}
+.img-tl-1 {
+    grid-area: tl-1;
+}
+.img-tl-2 {
+    grid-area: tl-2;
+}
+.img-sm-1 {
+    grid-area: sm-1;
+}
+.img-sm-2 {
+    grid-area: sm-2;
+}
+.img-sm-3 {
+    grid-area: sm-3;
+}
+.img-sm-4 {
+    grid-area: sm-4;
+}
+/*-----------------------------------------------------------------------*/
+/*-----------------------------------FOOTER------------------------------*/
+/*-----------------------------------------------------------------------*/

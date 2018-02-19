@@ -1,27 +1,28 @@
-var clock = new Worker('time.js');
+var clock = new Worker('../public/js/time.js');
 
-const Display = function (arr) {
-    let self = this;
+var Display = function (arr) {
+    var self = this;
     self.selections = arr;
     
     arr.forEach(choice => {
-        self[choice] = document.querySelector(`.--${choice}`);
+        self[choice] = document.querySelector('.--' + choice);
     });
     return self;
 }
 
 Display.prototype.showTime = function (data) {
-    let time = data;
+    var self = this;
+    var time = data;
 
-    this.selections.forEach(title => {
-        let date = this[title];
+    self.selections.forEach(title => {
+        var date = self[title];
         if (date.innerHTML != time[title]) {
             date.innerHTML = time[title];
         }
     });
 }
 
-const countdown = new Display(['months', 'weeks', 'days', 'hours', 'minutes', 'seconds']);
+var countdown = new Display(['months', 'days', 'hours', 'minutes', 'seconds']);
 
 clock.onmessage = function (resp) {
     countdown.showTime(resp.data);
