@@ -1,4 +1,6 @@
 function initMap() {
+    var info1620 = document.querySelector('.info-hotel');
+    
     var mapLocals = {
         hotel1620: {
             lat: 41.9619713,
@@ -280,22 +282,25 @@ function initMap() {
             }
         ]
     };
-    
+
     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-    
-    var markers = [
-        {
-            mark1: new google.maps.Marker({
+
+    var mark1 = new google.maps.Marker({
                 label: 'A',
                 position: mapLocals.pineHills,
-                map: map
-            })
-                },
-        {
-            mark2: new google.maps.Marker({
+                map: map,
+                title: 'Pine Hills',
+                animation: google.maps.Animation.DROP
+            });
+    var mark2 = new google.maps.Marker({
                 label: 'B',
                 position: mapLocals.hotel1620,
-                map: map
-            })
-                }];
-}
+                map: map,
+                title: 'Hotel 1620',
+                animation: google.maps.Animation.DROP
+            });
+        
+    mark1.addListener('click', function(){
+        info1620.classList.add('show');
+    });
+}   

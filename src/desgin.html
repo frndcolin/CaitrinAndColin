@@ -4,13 +4,18 @@
 <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no'>
-<!--    <base href='www.catirinandcolin.com'>-->
+    <!--    <base href='www.catirinandcolin.com'>-->
 
     <meta name='description' content='...'>
     <!-- link(rel='prefetch' href='...js file'-->
-    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Raleway|Montserrat:200,400,600|Prata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Raleway|Prata" rel="stylesheet">
     <link rel='stylesheet' href='../public/vendor/normalize.css'>
-    <link rel='stylesheet' href='../public/css/bundled.css'>
+    <link rel='stylesheet' href='../public/vendor/animate.css'>
+    <link rel='stylesheet' href='../public/vendor/aos.css'>
+    <link rel='stylesheet' href='./css/base.css'>
+    <link rel='stylesheet' href='./css/modules.css'>
+    <link rel='stylesheet' href='./css/layout.css'>
+    <link rel='stylesheet' href='./css/nav.css'>
     <!--        // Global site tag (gtag.js) - Google Analytics-->
     <script async type='text/javascript' src="https://www.googletagmanager.com/gtag/js?id=UA-109028742-2"></script>
 
@@ -42,9 +47,9 @@
         <div class="full-date">
             DECEMBER 1, 2018
         </div>
-        <div class="down-arrow">
+        <a class="down-arrow animated" href="#welcome">
             <img class="arrow" src="../public/img/arrow.svg">
-        </div>
+        </a>
     </header>
     <main>
         <section id="welcome">
@@ -54,29 +59,29 @@
                 <div class="countdown">
                     <div class="date">
                         <span class="date-title">Months</span>
-                        <span class="--months">00</span>
+                        <span class="date--months">00</span>
                     </div>
                     <div class="date">
                         <span class="date-title">Days</span>
-                        <span class="--days">00</span>
+                        <span class="date--days">00</span>
                     </div>
                     <div class="date">
                         <span class="date-title">Hours</span>
-                        <span class="--hours">00</span>
+                        <span class="date--hours">00</span>
                     </div>
                     <div class="date">
                         <span class="date-title">Minutes</span>
-                        <span class="--minutes">00</span>
+                        <span class="date--minutes">00</span>
                     </div>
                     <div class="date">
                         <span class="date-title">Seconds</span>
-                        <span class="--seconds">00</span>
+                        <span class="date--seconds">00</span>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="events">
-            <div class="event-content">
+        <section id="events" class="grid--2-col">
+            <div class="event-content grid-item--lft" data-aos="flip-right">
                 <div class="container" style="background-color:#28324A">
                     <h2>Events</h2>
                     <p>Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket. Beef ribs capicola short loin kevin, salami drumstick pastrami brisket.</p>
@@ -84,32 +89,35 @@
                         <li class="event">Ceremony ~ 4:30pm December 1, 2018</li>
                         <li class="event">Reception to follow</li>
                     </ul>
-                    <a class="btn" href="#">Directions</a>
+                    <a class="btn animated" href="#">Directions</a>
                 </div>
             </div>
-            <div class="event-img"></div>
+            <div class="event-img grid-item--rgt" data-aos="flip-left">
+                <img src="https://source.unsplash.com/1600x900/?wedding,engagement">
+            </div>
         </section>
         <section id="accommodations">
             <div class="container">
                 <h2>Accommodations</h2>
                 <p>Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket. Beef ribs capicola short loin kevin, salami drumstick pastrami brisket porchetta bresaola pig strip steak. Kevin bresaola ham, cow buffalo short loin biltong t-bone.</p>
-                <a class="btn" href="#">Make Reservation</a>
+                <a class="btn animated" href="#">Make Reservation</a>
             </div>
             <div class="locations">
+                <div class="info-hotel hide">hello</div>
                 <div id="map"></div>
             </div>
         </section>
-        <section id="things-to-do">
-            <div class="boston">
-                <div class="container-small">
+        <section id="things-to-do" class="grid--2-col">
+            <div class="boston grid-item--lft" data-aos="zoom-in-right">
+                <div class="container">
                     <h2>Boston</h2>
                     <p>Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket.</p>
                     <p>Jerky pork turkey shankle t-bone porchetta</p>
                     <p>Jerky pork turkey shankle t-bone porchetta</p>
                 </div>
             </div>
-            <div class="cape-cod">
-                <div class="container-small">
+            <div class="cape-cod grid-item--rgt" data-aos="zoom-in-left">
+                <div class="container">
                     <h2>Cape Cod</h2>
                     <p>Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket.</p>
                     <p>Jerky pork turkey shankle t-bone porchetta</p>
@@ -118,64 +126,125 @@
                 </div>
             </div>
         </section>
-        <section id="photographs">
+        <section id="photographs" style="background-color: #FFECE5">
             <div class="container">
                 <h2>Photographs</h2>
                 <ul class="gallery">
-                    <li class="gallery-item img-lg-1"><img src="https://source.unsplash.com/800x450/?engagement"></li>
-                    <li class="gallery-item "><img class="img-sm-1" src="https://source.unsplash.com/800x450/?city"></li>
-                    <li class="gallery-item img-tl-1"><img src="https://source.unsplash.com/800x450/?wedding,white"></li>
-                    <li class="gallery-item img-sm-2"><img src="https://source.unsplash.com/800x450/?wedding,ring"></li>
-                    <li class="gallery-item img-tl-2"><img src="https://source.unsplash.com/800x450/?wedding,pink"></li>
-                    <li class="gallery-item img-lg-2"><img src="https://source.unsplash.com/800x450/?wedding,blue"></li>
-                    <li class="gallery-item img-sm-3"><img src="https://source.unsplash.com/800x450/?wedding,blush"></li>
-                    <li class="gallery-item img-sm-4"><img src="https://source.unsplash.com/800x450/?wedding,city"></li>
+                    <li class="gallery-item img-lg" data-aos-anchor="#photographs" data-aos="zoom-in-up">
+                        <img src="https://source.unsplash.com/800x450/?engagement">
+                    </li>
+                    <li class="gallery-item img-sm" data-aos-anchor="#photographs" data-aos="flip-right">
+                        <img src="https://source.unsplash.com/800x450/?city">
+                    </li>
+                    <li class="gallery-item img-tl" data-aos-anchor="#photographs" data-aos="zoom-in-left">
+                        <img src="https://source.unsplash.com/800x450/?wedding,white">
+                    </li>
+                    <li class="gallery-item img-sm" data-aos-anchor="#photographs" data-aos="zoom-in-down">
+                        <img src="https://source.unsplash.com/800x450/?wedding,ring">
+                    </li>
+                    <li class="gallery-item img-tl" data-aos-anchor="#photographs" data-aos="zoom-in-right">
+                        <img src="https://source.unsplash.com/800x450/?wedding,pink">
+                    </li>
+                    <li class="gallery-item img-lg" data-aos-anchor="#photographs" data-aos="flip-up">
+                        <img src="https://source.unsplash.com/800x450/?wedding,blue">
+                    </li>
+                    <li class="gallery-item img-sm" data-aos-anchor="#photographs" data-aos="zoom-in-left">
+                        <img src="https://source.unsplash.com/800x450/?wedding,blush">
+                    </li>
+                    <li class="gallery-item img-sm" data-aos-anchor="#photographs" data-aos="zoom-in-down">
+                        <img src="https://source.unsplash.com/800x450/?wedding,city">
+                    </li>
                 </ul>
             </div>
         </section>
         <section id="registries">
             <div class="container">
                 <h2>Gift Registries</h2>
-                <p>Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta.</p>
-                <p>Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta.</p>
-                <p>Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta.</p>
+                <p style="margin:20px 0 0">Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta.</p>
+                <p style="margin:20px 0 0">Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta.</p>
+                <p style="margin:20px 0 0">Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta.</p>
             </div>
         </section>
     </main>
-    <footer></footer>
+    <footer>
+        <ul class="footer-nav">
+            <li class="nav-item"><a href="#events">Events</a></li>
+            <li class="nav-item"><a href="#accommodations">Accommodations</a></li>
+            <li class="nav-item"><a href="#things-to-do">Things To Do</a></li>
+            <li class="nav-item"><a href="#photographs">Photographs</a></li>
+            <li class="nav-item"><a href="#registries">Gift Registries</a></li>
+        </ul>
+        <ul class="footer-nav">
+            <li class="nav-item"><a href="#events">Pine Hills</a></li>
+            <li class="nav-item"><a href="#accommodations">Hotel 1620</a></li>
+        </ul>
+        <div class="footer-content">
+            <form>
+                <label>Sign up to be notified of any updates!</label>
+                <input type="email" placeholder="e-mail@mail.com">
+                <button type="submit" class="btn frm-btn">Submit</button>
+            </form>
+            <p>Special thanks to <a href="#">Ben Boynton Photography</a></p>
+        </div>
+    </footer>
+    
+    
     <script src="../public/js/maps.js"></script>
     <script src="../public/js/display.js"></script>
     <script src="../public/vendor/granim.min.js"></script>
+    <script src="../public/vendor/aos.js"></script>
     <script src="../public/vendor/zenscroll.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl5Bletj_g8V6KqWBKJ8ZYCuKkiAD4i1s&callback=initMap" type="text/javascript"></script>
     <script>
         var granimInstance = new Granim({
             element: '#canvas-image-blending',
             direction: 'top-bottom',
-            opacity: [1, 1],
+            opacity: [0.85, 0.85],
             isPausedWhenNotInView: true,
             image: {
-                source: 'https://source.unsplash.com/1600x900/?engagement',
+                source: '../public/img/img-6743-flipped.jpg',
+                position: ['center', 'center'],
+                stretchMode: ['stretch', 'stretch'],
                 blendingMode: 'multiply'
             },
             states: {
                 "default-state": {
                     gradients: [
                         ['#28324A', '#485563'],
-                        ['#D6A319', '#FFEECA']
+                        ['#D6A319', '#28324A']
                     ],
-                    transitionSpeed: 5000
+                    transitionSpeed: 6000
                 }
             }
         });
+
+    </script>
+
+    <script>
+        var btn = document.querySelectorAll('.btn');
+
+        btn.forEach(function(elm) {
+            elm.addEventListener('mouseover', function() {
+                this.classList.add('pulse');
+            });
+            elm.addEventListener('mouseleave', function() {
+                this.classList.remove('pulse');
+            });
+        });
+
+    </script>
+    
+    <script>
+        AOS.init({
+            disable: 'mobile',
+            duration: 1000,
+            easing: 'ease-in-sine',
+            once: true
+        });
+    </script>
+    
+    <script>
     </script>
 </body>
 
 </html>
-
-
-<!--
-
-Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket. Beef ribs capicola short loin kevin, salami drumstick pastrami brisket porchetta bresaola pig strip steak. Kevin bresaola ham, cow buffalo short loin biltong t-bone.
-
--->

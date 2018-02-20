@@ -2,7 +2,7 @@ nav.main {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Montserrat';
+    font-family: 'Raleway';
     height: 60px;
     left: 0;
     position: absolute;
@@ -33,7 +33,7 @@ nav.main {
     display: block;
     height: 2px;
     width: 0;
-    background-color: #fff;
+    background-color: #D6A319;
     position: absolute;
     left: 50%;
     bottom: -5px;

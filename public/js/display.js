@@ -5,7 +5,7 @@ var Display = function (arr) {
     self.selections = arr;
     
     arr.forEach(choice => {
-        self[choice] = document.querySelector('.--' + choice);
+        self[choice] = document.querySelector('.date--' + choice);
     });
     return self;
 }

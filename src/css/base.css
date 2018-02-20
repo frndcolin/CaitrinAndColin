@@ -2,10 +2,11 @@ html, body {
     background-color: #f9f9f9;
     box-sizing: border-box;
     color: #444;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 18px;
     margin: 0;
     padding: 0;
+    position: relative;
     scroll-behavior: smooth;
 }
 
@@ -20,8 +21,39 @@ header {
 }
 section {
     margin: 0;
+    min-height: 50vh;
     padding: 0;
     width: 100%;
+}
+
+footer {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 30px 0;
+}
+
+form {
+    margin: 20px auto;
+    text-align: center;
+}
+
+input {
+    margin: 4px 18px 4px 0;   
+    font-size: 14px;
+    color: var(--white);
+    background-color: var(--blue);
+    border: none;
+    border-bottom: 2px solid var(--gold);
+    border-left: 2px solid var(--gold);
+    border-radius: 0;
+    padding: 8px;
+    width: 220px;
+}
+
+label {
+    display: block;
+    margin: 0 0 12px;
+    padding-bottom: 2px;
 }
 
 h1 {
@@ -44,4 +76,8 @@ p {
     margin: 0 auto;
     max-width: 800px;
     text-align: center;
+}
+
+.grid--2-col  p {
+    max-width: 70%;
 }
