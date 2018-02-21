@@ -3,13 +3,18 @@ html, body {
     box-sizing: border-box;
     color: #444;
     font-family: 'Raleway', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     margin: 0;
     padding: 0;
     position: relative;
     scroll-behavior: smooth;
 }
-
+main {
+    overflow: hidden;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
 header {
     background-color: #28324A;
     background-size: cover;
@@ -17,6 +22,7 @@ header {
     padding: 0;
     position: relative;
     height: 100vh;
+    min-height: 600px;
     width: 100%;
 }
 section {
@@ -57,14 +63,15 @@ label {
 }
 
 h1 {
-    font-size: 100px;
+    font-size: calc(64px + (110 - 64) * ((100vw - 300px) / (1400 - 300)));
     font-family: 'Great Vibes', cursive;
     font-weight: 400;
 }
 
 h2 {
     font-family: 'Great Vibes', serif;
-    font-size: 3.4rem;
+    font-size: 60px;
+    font-size: calc(54px + (66 - 54) * ((100vw - 300px) / (1400 - 300)));
     font-weight: 400;
     margin: 0 0 15px 0;
     text-align: center;
@@ -76,8 +83,10 @@ p {
     margin: 0 auto;
     max-width: 800px;
     text-align: center;
+    width: 95%;
 }
-
-.grid--2-col  p {
-    max-width: 70%;
+@media only screen and (min-width: 600px){
+    .grid--2-col  p {
+        max-width: 70%;
+    }
 }

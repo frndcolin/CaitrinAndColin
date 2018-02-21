@@ -1,70 +1,191 @@
+- var phillsDir = 'https://www.google.com/maps/dir//Pinehills+Golf+Club,+54+Clubhouse+Dr,+Plymouth,+MA+02360/@41.8858352,-70.5964869,17z'
+- var h1620Dir = 'https://www.google.com/maps/dir//Hotel+1620+Plymouth+Harbor,+Water+Street,+Plymouth,+MA/@41.961762,-70.7402986,12z'
 doctype html
 html(lang='en')
     head
         meta(charset='utf-8')
         meta(name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
         base(href='www.catirinandcolin.com')
-        
         meta(name='description' content='...')
-        //- link(rel='prefetch' href='...js file')
-        link(href="https://fonts.googleapis.com/css?family=Great+Vibes|Montserrat:200,400,600|Prata" rel="stylesheet")
+        //-   <!-- link(rel='prefetch' href='...js file'-->
+        
+        link(href='https://fonts.googleapis.com/css?family=Great+Vibes|Raleway|Prata' rel='stylesheet')
         link(rel='stylesheet' href='./vendor/normalize.css')
-        link(rel='stylesheet' href='./css/style.css')
-        // Global site tag (gtag.js) - Google Analytics
-        script(async type='text/javascript' src="https://www.googletagmanager.com/gtag/js?id=UA-109028742-2")
-        script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl5Bletj_g8V6KqWBKJ8ZYCuKkiAD4i1s&callback=initMap" type="text/javascript")
+        link(rel='stylesheet' href='./vendor/animate.css')
+        link(rel='stylesheet' href='./vendor/aos.css')
+        link(rel='stylesheet' href='./css/bundled.css')
+        //-    <!--        // Global site tag (gtag.js) - Google Analytics-->
+        script(async type='text/javascript' src='https://www.googletagmanager.com/gtag/js?id=UA-109028742-2')
     body
-        nav
-            p navbar
-        header(style="background-color:#999;width:100%;height:100vh")
-            h1 C & C
+        header
+            nav.main
+                ul.main-nav
+                    li.nav-item: a(href="#events") Events
+                    li.nav-item: a(href="#accommodations") Accommodations
+                    li.nav-item: a(href="#things-to-do") Things To Do
+                    li.nav-item: a(href="#photographs") Photographs
+                    li.nav-item: a(href="#registries") Gift Registries
+            canvas#canvas-image-blending
+            .names
+                .name.caitrin
+                    h1 Caitrin #[span.and &] Colin
+            .full-date
+                span DECEMBER 1, 2018
+            a(class="down-arrow animated" href="#welcome"): img.arrow(src='./img/arrow.svg')
         main
             section#welcome
                 .container
                     h2 Welcome
+                    p. 
+                        Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket. Beef ribs capicola short loin kevin, salami drumstick pastrami brisket porchetta bresaola pig strip steak. Kevin bresaola ham, cow buffalo short loin biltong t-bone.
+                    .countdown
+                        .date
+                            span.date-title Months
+                            span.date--months 00
+                        .date
+                            span.date-title Days
+                            span.date--days 00
+                        .date.hours
+                            span.date-title Hours
+                            span.date--hours 00
+                        .date.minutes
+                            span.date-title Minutes
+                            span.date--minutes 00
+                        .date.seconds
+                            span.date-title Seconds
+                            span.date--seconds 00
+            section#events.grid--2-col
+                .event-content(class='grid-item--lft' data-aos='zoom-in')
+                    .container(style='background-color:#28324A')
+                        h2 Events
+                        p. 
+                            Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket. Beef ribs capicola short loin kevin, salami drumstick pastrami brisket.
+                        ul.schedule
+                            li.event Ceremony ~ 4:30pm December 1, 2018
+                            li.event Reception to follow
+                        a(class="btn animated" href=phillsDir target='_blank') Directions
+                .event-img(class='grid-item--rgt' data-aos='flip-left')
+                    img(src='https://source.unsplash.com/1600x900/?wedding,engagement')
+            section#accommodations
+                .container
+                    h2 Accommodations
                     p.
                         Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket. Beef ribs capicola short loin kevin, salami drumstick pastrami brisket porchetta bresaola pig strip steak. Kevin bresaola ham, cow buffalo short loin biltong t-bone.
-            section#events
-                .container-L(style='background-color:red')
-                    .content
-                        h2 Events
+                    a(class='btn animated' href='#' target='_blank' data-aos='zoom-in') Make Reservation
+                    a(class='btn btn-ghost animated' href=h1620Dir target='_blank' data-aos='flip-down') Get Directions
+                .locations
+                    .info-hotel(class='hide') 
+                        .pinehills-info NEED TO ADD INFO---------------------
+                    #map
+            section#things-to-do.grid--2-col
+                .boston(class='grid-item--lft' data-aos='zoom-in-right')
+                    .container
+                        h2 Boston
                         p.
-                            Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket. Beef ribs capicola short loin kevin, salami drumstick pastrami brisket porchetta bresaola pig strip steak. Kevin bresaola ham, cow buffalo short loin biltong t-bone.
-                .container-R(style='background-color:blue')
-                    .content
-                        h2 img
-            section#accommodations
-                .container-full
-                    .content
-                        h2 Accommodations
+                            Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket.
+                        p Jerky pork turkey shankle t-bone porchetta
+                        p Jerky pork turkey shankle t-bone porchetta>
+                .cape-cod(class='grid-item--rgt' data-aos='flip-up')
+                    .container
+                        h2 Cape Cod
                         p.
-                            Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket. Beef ribs capicola short loin kevin, salami drumstick pastrami brisket porchetta bresaola pig strip steak. Kevin bresaola ham, cow buffalo short loin biltong t-bone.
-                        #map
-            section#things-to-do
-                .container-L(style='background-color:#28324a;color:#f1f1e6')
-                    .content
-                        h2 Things To Do - Boston 
-                .container-R(style='background-color:red')
-                    .content
-                        h2 Things To Do - Cape Cod
-            section#photographs
-                .container-full
-                    .content
-                        h2 Photographs
-            section#gift-registries
-                .container-full
-                    .content
-                        h2 Gift Registries
-                        p Jerky pork turkey shankle t-bone porchetta meatloaf pork loin andouille pancetta. 
-                        p Ribeye venison pastrami, meatball strip  chicken drumstick buffalo andouille brisket. 
-                        p Beef ribs capicola short loin kevin, pastrami brisket porchetta bresaola pig.
+                            Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket.
+                        p Jerky pork turkey shankle t-bone porchetta
+                        p Jerky pork turkey shankle t-bone porchetta
+                        p Jerky pork turkey shankle t-bone porchetta
+            section#photographs(style="background-color: #FFECE5")
+                .container
+                    h2 Photographs
+                    ul.gallery
+                        li.gallery-item(class='img-lg' data-aos-anchor=".gallery" data-aos="zoom-in-up")
+                            img(src="https://source.unsplash.com/800x450/?engagement")
+                        li.gallery-item(class='img-sm' data-aos-anchor=".gallery" data-aos="flip-right")
+                            img(src="https://source.unsplash.com/800x450/?city")
+                        li.gallery-item(class='img-tl' data-aos-anchor=".gallery" data-aos="zoom-in-left")
+                            img(src="https://source.unsplash.com/800x450/?wedding,white")
+                        li.gallery-item(class='img-sm' data-aos-anchor=".gallery" data-aos="zoom-in-down")
+                            img(src="https://source.unsplash.com/800x450/?wedding,ring")
+                        li.gallery-item(class='img-tl' data-aos-anchor=".gallery" data-aos="zoom-in-right")
+                            img(src="https://source.unsplash.com/800x450/?wedding,pink")
+                        li.gallery-item(class='img-lg' data-aos-anchor=".gallery" data-aos="flip-up")
+                            img(src="https://source.unsplash.com/800x450/?wedding,blue")
+                        li.gallery-item(class='img-sm' data-aos-anchor=".gallery" data-aos="zoom-in-left")
+                            img(src="https://source.unsplash.com/800x450/?wedding,blush")
+                        li.gallery-item(class='img-sm' data-aos-anchor=".gallery" data-aos="zoom-in-down")
+                            img(src="https://source.unsplash.com/800x450/?wedding,city")
+            section#registries
+                .container
+                    h2 Gift Registries
+                    p(style="margin:20px 0 0") Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta.
+                    p(style="margin:20px 0 0") Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta.
+                    p(style="margin:20px 0 0") Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta.
         footer
-            h1 footer
-        script(src='./js/maps.js')
-        //- 
-            REMOVE COMMENT IN PROD TO INIT ANALYTICS
-            script.
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'UA-109028742-2');
+            ul.footer-nav
+                li.nav-item: a(href="#events") Events
+                li.nav-item: a(href="#accommodations") Accommodations
+                li.nav-item: a(href="#things-to-do") Things To Do
+                li.nav-item: a(href="#photographs") Photographs
+                li.nav-item: a(href="#registries") Gift Registries
+            ul.footer-nav
+                li.nav-item: a(href="#events") Pine Hills
+                li.nav-item: a(href="#accommodations") Hotel 1620
+            .footer-content
+                form
+                    label Sign up to be notified of any updates!
+                    input(type="email" placeholder="e-mail@mail.com")
+                    button(type="submit" class="btn frm-btn") Submit
+                p.thanks Special thanks to #[a(href="#") Ben Boynton Photography]
+    
+    script(src="./js/maps.js")
+    script(src="./js/display.js")
+    script(src="./vendor/granim.min.js")
+    script(src="./vendor/aos.js")
+    script(src="./vendor/zenscroll.min.js")
+    script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl5Bletj_g8V6KqWBKJ8ZYCuKkiAD4i1s&callback=initMap" type="text/javascript")
+    script.
+        var granimInstance = new Granim({
+            element: '#canvas-image-blending',
+            direction: 'top-bottom',
+            opacity: [0.85, 0.85],
+            isPausedWhenNotInView: true,
+            image: {
+                source: './img/_MG_6738.jpg',
+                position: ['center', 'center'],
+                stretchMode: ['stretch', 'stretch'],
+                blendingMode: 'multiply'
+            },
+            states: {
+                "default-state": {
+                    gradients: [
+                        ['#28324A', '#485563'],
+                        ['#D6A319', '#28324A']
+                    ],
+                    transitionSpeed: 6000
+                }
+            }
+        });
+
+        var btn = document.querySelectorAll('.btn');
+
+        btn.forEach(function(elm) {
+            elm.addEventListener('mouseover', function() {
+                this.classList.add('pulse');
+            });
+            elm.addEventListener('mouseleave', function() {
+                this.classList.remove('pulse');
+            });
+        });
+
+        AOS.init({
+            disable: window.innerWidth < 720,
+            duration: 1000,
+            easing: 'ease-in-sine',
+            once: true
+        });
+         
+        //-    REMOVE COMMENT IN PROD TO INIT ANALYTICS
+        //-    script.
+        //-        window.dataLayer = window.dataLayer || [];
+        //-        function gtag(){dataLayer.push(arguments);}
+        //-        gtag('js', new Date());
+        //-        gtag('config', 'UA-109028742-2');

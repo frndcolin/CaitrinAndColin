@@ -1,4 +1,4 @@
-var clock = new Worker('../public/js/time.js');
+var clock = new Worker('./js/time.js');
 
 var Display = function (arr) {
     var self = this;
