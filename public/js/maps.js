@@ -302,11 +302,9 @@ function initMap() {
             });
         
     mark1.addListener('click', function(){
-        pineHillsMapInfo.classList.add('show');
-        pineHillsMapInfo.classList.remove('hide');
+        pineHillsMapInfo.classList.replace('map-hide', 'map-show');
     });
     mark2.addListener('click', function(){
-        hotel1620MapInfo.classList.add('show');
-        hotel1620MapInfo.classList.remove('hide');
+        hotel1620MapInfo.classList.replace('map-hide', 'map-show');
     });
 }   

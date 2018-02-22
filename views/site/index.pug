@@ -72,7 +72,7 @@ html(lang='en')
                         Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket. Beef ribs capicola short loin kevin, salami drumstick pastrami brisket porchetta bresaola pig strip steak. Kevin bresaola ham, cow buffalo short loin biltong t-bone.
                     a(class='btn animated' href='#' target='_blank' data-aos='zoom-in') Make Reservation
                 .locations
-                    #hotel-1620(class='map-info hide')
+                    #hotel-1620(class='map-info map-hide')
                         .map-info-close
                         .map-info-body
                             .map-info-title
@@ -83,7 +83,7 @@ html(lang='en')
                                 .map-btns
                                     a(class='map-info-btn' href='#' target='_blank') Directions
                                     a(class='map-info-btn' href='#' target='_blank') Web Site
-                    #pine-hills(class='map-info hide')
+                    #pine-hills(class='map-info map-hide')
                         .map-info-close
                         .map-info-body
                             .map-info-title
@@ -148,8 +148,8 @@ html(lang='en')
                 li.nav-item: a(href="#events") Pine Hills
                 li.nav-item: a(href="#accommodations") Hotel 1620
             .footer-content
+                p Sign up to be notified of any updates!
                 form
-                    label Sign up to be notified of any updates!
                     input(type="email" placeholder="e-mail@mail.com")
                     button(type="submit" class="btn frm-btn") Submit
                 p.thanks Special thanks to #[a(href="#") Ben Boynton Photography]
@@ -201,8 +201,7 @@ html(lang='en')
         
         mapClose.forEach(function(closeBtn) {
             closeBtn.addEventListener('click', function(){
-                this.parentNode.classList.add('hide');
-                this.parentNode.classList.remove('show'); 
+                this.parentNode.classList.replace('map-show', 'map-hide');
             });
         });
         //-    REMOVE COMMENT IN PROD TO INIT ANALYTICS
