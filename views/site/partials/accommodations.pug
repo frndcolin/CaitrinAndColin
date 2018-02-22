@@ -1,0 +1,30 @@
+- 
+    var locals = [
+        {"id": "pine-hills", 
+        "title": "Pine Hills Country Club", 
+        "address": "http://pinehillspaviliongrille.com/pavilion/weddings/", 
+        "directions": "https://www.google.com/maps/dir//Pinehills+Golf+Club,+54+Clubhouse+Dr,+Plymouth,+MA+02360/@41.8858352,-70.5964869,17z", 
+        "info": "Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket."},
+        {"id": "hotel-1620", 
+        "title": "Hotel 1620", 
+        "address": "https://www.hotel1620.com/", 
+        "directions": "https://www.google.com/maps/dir//Hotel+1620+Plymouth+Harbor,+Water+Street,+Plymouth,+MA/@41.961762,-70.7402986,12z", 
+        "info": "Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket."}]
+.container
+    h2 Accommodations
+    p.
+        Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket. Beef ribs capicola short loin kevin, salami drumstick pastrami brisket porchetta bresaola pig strip steak. Kevin bresaola ham, cow buffalo short loin biltong t-bone.
+    a(class='btn animated' href='#' target='_blank' data-aos='zoom-in') Make Reservation
+.locations
+    each local in locals
+        .map-info(id=local.id class='map-hide')
+            .map-info-close
+            .map-info-body
+                .map-info-title
+                    h4= local.title
+                .map-info-content
+                    p= local.info
+                    .map-btns
+                        a(class='map-info-btn' href=local.directions target='_blank') Directions
+                        a(class='map-info-btn' href=local.address target='_blank') Web Site    
+    #map

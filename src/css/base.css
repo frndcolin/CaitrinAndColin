@@ -38,14 +38,13 @@ footer {
     background-color: var(--blue);
     color: var(--white);
     padding: 30px 0;
+    min-height: 40vh;
 }
 
 form {
     margin: 5px auto 40px;
     text-align: center;
     padding: 5px 7px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 3px;
 }
 
 input {

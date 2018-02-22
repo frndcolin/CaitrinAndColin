@@ -73,7 +73,7 @@
 .names {
     color: var(--white);
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 18.75%;
     width: 50%;
     transform: translateY(-50%);
@@ -113,7 +113,7 @@
     text-align: center;
     position: absolute;
     top: 77%;
-    top: calc(100vh - 150px);
+    top: calc(100vh - 170px);
     left: 49%;
     width: 350px;
     transform: translate(-50%, -50%);
@@ -165,7 +165,7 @@
 .down-arrow {
     height: 50px;
     width: 50px;
-    top: calc(100vh - 100px);
+    top: calc(100vh - 120px);
     left: 50%;
     transform: translateX(-50%);
     position: absolute;

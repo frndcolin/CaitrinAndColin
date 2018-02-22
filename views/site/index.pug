@@ -1,5 +1,6 @@
-- var phillsDir = 'https://www.google.com/maps/dir//Pinehills+Golf+Club,+54+Clubhouse+Dr,+Plymouth,+MA+02360/@41.8858352,-70.5964869,17z'
-- var h1620Dir = 'https://www.google.com/maps/dir//Hotel+1620+Plymouth+Harbor,+Water+Street,+Plymouth,+MA/@41.961762,-70.7402986,12z'
+- 
+  var phillsDir = 'https://www.google.com/maps/dir//Pinehills+Golf+Club,+54+Clubhouse+Dr,+Plymouth,+MA+02360/@41.8858352,-70.5964869,17z'
+  var h1620Dir = 'https://www.google.com/maps/dir//Hotel+1620+Plymouth+Harbor,+Water+Street,+Plymouth,+MA/@41.961762,-70.7402986,12z'
 doctype html
 html(lang='en')
     head
@@ -33,104 +34,15 @@ html(lang='en')
             a(class="down-arrow animated" href="#welcome"): img.arrow(src='./img/arrow.svg')
         main
             section#welcome
-                .container
-                    h2 Welcome
-                    p. 
-                        Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket. Beef ribs capicola short loin kevin, salami drumstick pastrami brisket porchetta bresaola pig strip steak. Kevin bresaola ham, cow buffalo short loin biltong t-bone.
-                    .countdown
-                        .date
-                            span.date-title Months
-                            span.date--months 00
-                        .date
-                            span.date-title Days
-                            span.date--days 00
-                        .date.hours
-                            span.date-title Hours
-                            span.date--hours 00
-                        .date.minutes
-                            span.date-title Minutes
-                            span.date--minutes 00
-                        .date.seconds
-                            span.date-title Seconds
-                            span.date--seconds 00
+                include partials/welcome.pug
             section#events.grid--2-col
-                .event-content(class='grid-item--lft' data-aos='zoom-in')
-                    .container(style='background-color:#28324A')
-                        h2 Events
-                        p. 
-                            Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket. Beef ribs capicola short loin kevin, salami drumstick pastrami brisket.
-                        ul.schedule
-                            li.event Ceremony ~ 4:30pm December 1, 2018
-                            li.event Reception to follow
-                        a(class="btn animated" href=phillsDir target='_blank') Directions
-                .event-img(class='grid-item--rgt' data-aos='flip-left')
-                    img(src='https://source.unsplash.com/1600x900/?wedding,engagement')
+                include partials/events.pug    
             section#accommodations
-                .container
-                    h2 Accommodations
-                    p.
-                        Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket. Beef ribs capicola short loin kevin, salami drumstick pastrami brisket porchetta bresaola pig strip steak. Kevin bresaola ham, cow buffalo short loin biltong t-bone.
-                    a(class='btn animated' href='#' target='_blank' data-aos='zoom-in') Make Reservation
-                .locations
-                    #hotel-1620(class='map-info map-hide')
-                        .map-info-close
-                        .map-info-body
-                            .map-info-title
-                                h4 Hotel 1620
-                            .map-info-content
-                                p. 
-                                    Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket.
-                                .map-btns
-                                    a(class='map-info-btn' href='#' target='_blank') Directions
-                                    a(class='map-info-btn' href='#' target='_blank') Web Site
-                    #pine-hills(class='map-info map-hide')
-                        .map-info-close
-                        .map-info-body
-                            .map-info-title
-                                h4 Pine Hills Country Club
-                            .map-info-content
-                                p. 
-                                    Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket.
-                                .map-btns
-                                    a(class='map-info-btn' href='#' target='_blank') Directions
-                                    a(class='map-info-btn' href='#' target='_blank') Web Site
-                    #map
+                include partials/accommodations.pug
             section#things-to-do.grid--2-col
-                .boston(class='grid-item--lft' data-aos='zoom-in-right')
-                    .container
-                        h2 Boston
-                        p.
-                            Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket.
-                        p Jerky pork turkey shankle t-bone porchetta
-                        p Jerky pork turkey shankle t-bone porchetta>
-                .cape-cod(class='grid-item--rgt' data-aos='flip-up')
-                    .container
-                        h2 Cape Cod
-                        p.
-                            Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket.
-                        p Jerky pork turkey shankle t-bone porchetta
-                        p Jerky pork turkey shankle t-bone porchetta
-                        p Jerky pork turkey shankle t-bone porchetta
+                include partials/things-todo.pug
             section#photographs(style="background-color: #FFECE5")
-                .container
-                    h2 Photographs
-                    ul.gallery
-                        li.gallery-item(class='img-lg' data-aos-anchor=".gallery" data-aos="zoom-in-up")
-                            img(src="https://source.unsplash.com/800x450/?engagement")
-                        li.gallery-item(class='img-sm' data-aos-anchor=".gallery" data-aos="flip-right")
-                            img(src="https://source.unsplash.com/800x450/?city")
-                        li.gallery-item(class='img-tl' data-aos-anchor=".gallery" data-aos="zoom-in-left")
-                            img(src="https://source.unsplash.com/800x450/?wedding,white")
-                        li.gallery-item(class='img-sm' data-aos-anchor=".gallery" data-aos="zoom-in-down")
-                            img(src="https://source.unsplash.com/800x450/?wedding,ring")
-                        li.gallery-item(class='img-tl' data-aos-anchor=".gallery" data-aos="zoom-in-right")
-                            img(src="https://source.unsplash.com/800x450/?wedding,pink")
-                        li.gallery-item(class='img-lg' data-aos-anchor=".gallery" data-aos="flip-up")
-                            img(src="https://source.unsplash.com/800x450/?wedding,blue")
-                        li.gallery-item(class='img-sm' data-aos-anchor=".gallery" data-aos="zoom-in-left")
-                            img(src="https://source.unsplash.com/800x450/?wedding,blush")
-                        li.gallery-item(class='img-sm' data-aos-anchor=".gallery" data-aos="zoom-in-down")
-                            img(src="https://source.unsplash.com/800x450/?wedding,city")
+                include partials/photographs.pug
             section#registries
                 .container
                     h2 Gift Registries
@@ -158,7 +70,6 @@ html(lang='en')
     script(src="./js/display.js")
     script(src="./vendor/granim.min.js")
     script(src="./vendor/aos.js")
-    script(src="./vendor/zenscroll.min.js")
     script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl5Bletj_g8V6KqWBKJ8ZYCuKkiAD4i1s&callback=initMap" type="text/javascript")
     script.
         var granimInstance = new Granim({
