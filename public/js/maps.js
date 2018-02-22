@@ -1,5 +1,6 @@
 function initMap() {
-    var info1620 = document.querySelector('.info-hotel');
+    var hotel1620MapInfo = document.querySelector('#hotel-1620');
+    var pineHillsMapInfo = document.querySelector('#pine-hills');
     
     var mapLocals = {
         hotel1620: {
@@ -301,6 +302,11 @@ function initMap() {
             });
         
     mark1.addListener('click', function(){
-        info1620.classList.add('show');
+        pineHillsMapInfo.classList.add('show');
+        pineHillsMapInfo.classList.remove('hide');
+    });
+    mark2.addListener('click', function(){
+        hotel1620MapInfo.classList.add('show');
+        hotel1620MapInfo.classList.remove('hide');
     });
 }   

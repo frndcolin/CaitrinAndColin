@@ -12,17 +12,19 @@ html, body {
 main {
     overflow: hidden;
     width: 100%;
-    max-width: 1400px;
     margin: 0 auto;
 }
 header {
     background-color: #28324A;
-    background-size: cover;
+    background-image: url(../img/_MG_6898.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100% 120%;
     margin: 0;
     padding: 0;
     position: relative;
     height: 100vh;
-    min-height: 600px;
+    max-height: calc((9 / 16) * 100%);
     width: 100%;
 }
 section {
@@ -63,9 +65,13 @@ label {
 }
 
 h1 {
-    font-size: calc(64px + (110 - 64) * ((100vw - 300px) / (1400 - 300)));
-    font-family: 'Great Vibes', cursive;
+    font-size: calc(54px + (90 - 54) * ((100vw - 300px) / (1600 - 300)));
+    font-family: 'Prata', serif;
     font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.1em;
+    letter-spacing: 0.05em;
+    margin: 0;
 }
 
 h2 {

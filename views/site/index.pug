@@ -26,8 +26,8 @@ html(lang='en')
                     li.nav-item: a(href="#registries") Gift Registries
             canvas#canvas-image-blending
             .names
-                .name.caitrin
-                    h1 Caitrin #[span.and &] Colin
+                h1 Caitrin 
+                h1.name--colin #[span.and &] Colin
             .full-date
                 span DECEMBER 1, 2018
             a(class="down-arrow animated" href="#welcome"): img.arrow(src='./img/arrow.svg')
@@ -71,10 +71,29 @@ html(lang='en')
                     p.
                         Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket. Beef ribs capicola short loin kevin, salami drumstick pastrami brisket porchetta bresaola pig strip steak. Kevin bresaola ham, cow buffalo short loin biltong t-bone.
                     a(class='btn animated' href='#' target='_blank' data-aos='zoom-in') Make Reservation
-                    a(class='btn btn-ghost animated' href=h1620Dir target='_blank' data-aos='flip-down') Get Directions
                 .locations
-                    .info-hotel(class='hide') 
-                        .pinehills-info NEED TO ADD INFO---------------------
+                    #hotel-1620(class='map-info hide')
+                        .map-info-close
+                        .map-info-body
+                            .map-info-title
+                                h4 Hotel 1620
+                            .map-info-content
+                                p. 
+                                    Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket.
+                                .map-btns
+                                    a(class='map-info-btn' href='#' target='_blank') Directions
+                                    a(class='map-info-btn' href='#' target='_blank') Web Site
+                    #pine-hills(class='map-info hide')
+                        .map-info-close
+                        .map-info-body
+                            .map-info-title
+                                h4 Pine Hills Country Club
+                            .map-info-content
+                                p. 
+                                    Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket.
+                                .map-btns
+                                    a(class='map-info-btn' href='#' target='_blank') Directions
+                                    a(class='map-info-btn' href='#' target='_blank') Web Site
                     #map
             section#things-to-do.grid--2-col
                 .boston(class='grid-item--lft' data-aos='zoom-in-right')
@@ -145,14 +164,8 @@ html(lang='en')
         var granimInstance = new Granim({
             element: '#canvas-image-blending',
             direction: 'top-bottom',
-            opacity: [0.85, 0.85],
+            opacity: [0.6, 0.75],
             isPausedWhenNotInView: true,
-            image: {
-                source: './img/_MG_6738.jpg',
-                position: ['center', 'center'],
-                stretchMode: ['stretch', 'stretch'],
-                blendingMode: 'multiply'
-            },
             states: {
                 "default-state": {
                     gradients: [
@@ -182,6 +195,16 @@ html(lang='en')
             once: true
         });
          
+        var pineHillsMapInfo = document.querySelector("#pine-hills");
+        var hotel1620MapInfo = document.querySelector("#hotel-1620");
+        var mapClose = document.querySelectorAll(".map-info-close");
+        
+        mapClose.forEach(function(closeBtn) {
+            closeBtn.addEventListener('click', function(){
+                this.parentNode.classList.add('hide');
+                this.parentNode.classList.remove('show'); 
+            });
+        });
         //-    REMOVE COMMENT IN PROD TO INIT ANALYTICS
         //-    script.
         //-        window.dataLayer = window.dataLayer || [];

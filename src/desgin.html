@@ -8,7 +8,7 @@
 
     <meta name='description' content='...'>
     <!-- link(rel='prefetch' href='...js file'-->
-    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Raleway|Prata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Raleway:200,400|Prata:200,400" rel="stylesheet">
     <link rel='stylesheet' href='../public/vendor/normalize.css'>
     <link rel='stylesheet' href='../public/vendor/animate.css'>
     <link rel='stylesheet' href='../public/vendor/aos.css'>
@@ -34,11 +34,11 @@
         </nav>
         <canvas id="canvas-image-blending"></canvas>
         <div class="names">
-            <div class="name caitrin">
-                <h1>Caitrin
-                <span class="and">&amp;</span>
-                Colin</h1>
-            </div>
+                <h1>Caitrin</h1>
+                <h1 class="name--colin">
+                    <span class="and">&amp;</span>
+                    Colin
+                </h1>
         </div>
         <div class="full-date"><span>DECEMBER 1, 2018</span></div>
         <a class="down-arrow animated" href="#welcome">
@@ -94,11 +94,39 @@
             <div class="container">
                 <h2>Accommodations</h2>
                 <p>Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket. Beef ribs capicola short loin kevin, salami drumstick pastrami brisket porchetta bresaola pig strip steak. Kevin bresaola ham, cow buffalo short loin biltong t-bone.</p>
-                <a class="btn animated" href="#" data-aos="zoom-in">Make Reservation</a>
-                <a class="btn btn-ghost animated" href="#" data-aos="flip-down">Get Directions</a>
+                <a class="btn float animated" href="#" data-aos="zoom-in">Make Reservation</a>
             </div>
             <div class="locations">
-                <div class="info-hotel hide">hello</div>
+                <div id="hotel-1620" class="map-info hide">
+                    <div class="map-info-close"></div>
+                    <div class="map-info-body">
+                        <div class="map-info-title">
+                            <h4>Hotel 1620</h4>
+                        </div>
+                        <div class="map-info-content">
+                            <p>Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket.</p>
+                            <div class="map-btns">
+                                <a class="map-info-btn animated" href="#">Directions</a>
+                                <a class="map-info-btn animated" href="#">Web Site</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="pine-hills" class="map-info hide">
+                    <div class="map-info-close"></div>
+                    <div class="map-info-body">
+                        <div class="map-info-title">
+                            <h4>Pine Hills Country Club</h4>
+                        </div>
+                        <div class="map-info-content">
+                            <p>Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket.</p>
+                            <div class="map-btns">
+                                <a class="map-info-btn animated" href="#">Directions</a>
+                                <a class="map-info-btn animated" href="#">Web Site</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div id="map"></div>
             </div>
         </section>
@@ -194,14 +222,8 @@
         var granimInstance = new Granim({
             element: '#canvas-image-blending',
             direction: 'top-bottom',
-            opacity: [0.85, 0.85],
+            opacity: [0.6, 0.7],
             isPausedWhenNotInView: true,
-            image: {
-                source: '../public/img/_MG_6738.jpg',
-                position: ['center', 'center'],
-                stretchMode: ['stretch', 'stretch'],
-                blendingMode: 'multiply'
-            },
             states: {
                 "default-state": {
                     gradients: [
@@ -232,13 +254,23 @@
     <script>
         AOS.init({
             disable: window.innerWidth < 720,
-            duration: 1000,
+            duration: 800,
             easing: 'ease-in-sine',
             once: true
         });
     </script>
     
     <script>
+        var pineHillsMapInfo = document.querySelector("#pine-hills");
+        var hotel1620MapInfo = document.querySelector("#hotel-1620");
+        var mapClose = document.querySelectorAll(".map-info-close");
+        
+        mapClose.forEach(function(closeBtn) {
+            closeBtn.addEventListener('click', function(){
+                this.parentNode.classList.add('hide');
+                this.parentNode.classList.remove('show');
+            });
+        });
     </script>
 </body>
 
