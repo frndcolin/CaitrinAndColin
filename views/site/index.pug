@@ -66,55 +66,13 @@ html(lang='en')
                     button(type="submit" class="btn frm-btn") Submit
                 p.thanks Special thanks to #[a(href="#") Ben Boynton Photography]
     
-    script(src="./js/maps.js")
-    script(src="./js/display.js")
     script(src="./vendor/granim.min.js")
     script(src="./vendor/aos.js")
+    script(src="./js/index.js")
+    script(src="./js/display.js")
     script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl5Bletj_g8V6KqWBKJ8ZYCuKkiAD4i1s&callback=initMap" type="text/javascript")
-    script.
-        var granimInstance = new Granim({
-            element: '#canvas-image-blending',
-            direction: 'top-bottom',
-            opacity: [0.6, 0.75],
-            isPausedWhenNotInView: true,
-            states: {
-                "default-state": {
-                    gradients: [
-                        ['#28324A', '#485563'],
-                        ['#D6A319', '#28324A']
-                    ],
-                    transitionSpeed: 6000
-                }
-            }
-        });
-
-        var btn = document.querySelectorAll('.btn');
-
-        btn.forEach(function(elm) {
-            elm.addEventListener('mouseover', function() {
-                this.classList.add('pulse');
-            });
-            elm.addEventListener('mouseleave', function() {
-                this.classList.remove('pulse');
-            });
-        });
-
-        AOS.init({
-            disable: window.innerWidth < 720,
-            duration: 1000,
-            easing: 'ease-in-sine',
-            once: true
-        });
-         
-        var pineHillsMapInfo = document.querySelector("#pine-hills");
-        var hotel1620MapInfo = document.querySelector("#hotel-1620");
-        var mapClose = document.querySelectorAll(".map-info-close");
-        
-        mapClose.forEach(function(closeBtn) {
-            closeBtn.addEventListener('click', function(){
-                this.parentNode.classList.replace('map-show', 'map-hide');
-            });
-        });
+    script(src="./js/g-map.js")
+    
         //-    REMOVE COMMENT IN PROD TO INIT ANALYTICS
         //-    script.
         //-        window.dataLayer = window.dataLayer || [];

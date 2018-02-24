@@ -1,3 +1,9 @@
+:root {
+    --bp-lg: 1000;
+    --bp-md: 800;
+    --bp-sm: 500;
+}
+
 html, body {
     background-color: #f9f9f9;
     box-sizing: border-box;
@@ -16,16 +22,28 @@ main {
 }
 header {
     background-color: #28324A;
-    background-image: url(../img/_MG_6898.jpg);
+    background-image: url(../../public/img/header-bg-414X736.jpg);
     background-attachment: fixed;
     background-position: center;
-    background-size: 100% 120%;
+    background-size: cover;
     margin: 0;
     padding: 0;
     position: relative;
     height: 100vh;
     max-height: calc((9 / 16) * 100%);
     width: 100%;
+}
+@media only screen and (min-width: 420px) {
+    header{
+        background-image: url('../../public/img/header-bg-640X360.jpg');
+        background-position: 80%
+    }
+}
+@media only screen and (min-width: 1000px) {
+    header{
+        background-image: url('../../public/img/_MG_6898.jpg');
+        background-position: 0 -180px 
+    }
 }
 section {
     margin: 0;
@@ -61,7 +79,7 @@ input {
 }
 
 h1 {
-    font-size: calc(54px + (90 - 54) * ((100vw - 300px) / (1600 - 300)));
+    font-size: calc(54px + (105 - 54) * ((100vw - 300px) / (1600 - 300)));
     font-family: 'Prata', serif;
     font-weight: 400;
     text-transform: uppercase;

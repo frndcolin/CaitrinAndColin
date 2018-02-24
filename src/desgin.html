@@ -8,7 +8,7 @@
 
     <meta name='description' content='...'>
     <!-- link(rel='prefetch' href='...js file'-->
-    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Raleway:200,400|Prata:200,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Playfair+Display|Raleway:200,400|Prata:200,400" rel="stylesheet">
     <link rel='stylesheet' href='../public/vendor/normalize.css'>
     <link rel='stylesheet' href='../public/vendor/animate.css'>
     <link rel='stylesheet' href='../public/vendor/aos.css'>
@@ -41,9 +41,6 @@
                 </h1>
         </div>
         <div class="full-date"><span>DECEMBER 1, 2018</span></div>
-        <a class="down-arrow animated" href="#welcome">
-            <img class="arrow" src="../public/img/arrow.svg">
-        </a>
     </header>
     <main>
         <section id="welcome">
@@ -149,7 +146,7 @@
                 </div>
             </div>
         </section>
-        <section id="photographs" style="background-color: #FFECE5">
+        <section id="photographs" style="background-color: #FFE5E6">
             <div class="container">
                 <h2>Photographs</h2>
                 <ul class="gallery">
@@ -222,12 +219,11 @@
         var granimInstance = new Granim({
             element: '#canvas-image-blending',
             direction: 'top-bottom',
-            opacity: [0.6, 0.7],
+            opacity: [0.3, 0.6],
             isPausedWhenNotInView: true,
             states: {
                 "default-state": {
                     gradients: [
-                        ['#28324A', '#485563'],
                         ['#D6A319', '#28324A']
                     ],
                     transitionSpeed: 6000
