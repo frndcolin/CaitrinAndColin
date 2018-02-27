@@ -1,0 +1,112 @@
+footer {
+    background-color: var(--white);
+    background-image: linear-gradient(rgba(30, 40, 64, 0.85), rgba(30, 40, 64, 0.75)), url("../img/squirrel-fullsize.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: var(--white);
+    padding: 20px 0;
+    min-height: 50vh;
+    position: relative;
+}
+
+form {
+    margin: 5px auto;
+    text-align: center;
+    padding: 5px 7px;
+}
+
+input {
+    margin: 4px auto;   
+    font-size: 16px;
+    color: var(--white);
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--gold);
+    border-left: 2px solid var(--gold);
+    border-radius: 0;
+    padding: 8px;
+    letter-spacing: 1px;
+    width: 90%;
+}
+input:focus {
+    background-color: rgba(40, 50, 75, 0.5);
+    outline: none;
+}
+button.frm-btn {
+    border: none;
+    height: auto;
+    margin: 4px 0;
+    font-size: 14px;
+    padding: 10px 16px;
+    border: 2px solid var(--gold);
+    background-color: transparent;
+    color: var(--gold);
+    width: 95%
+}
+
+
+
+
+
+
+
+
+
+
+.footer-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 4px auto;
+    padding: 0;
+    max-width: 750px
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 60px 0 20px;
+}
+
+.footer-nav .nav-item {
+    font-size: 14px;
+    margin: 4px 20px;
+    padding: 6px;
+}
+
+.thanks {
+    font-size: 14px;
+    position: relative;
+}
+
+.thanks > a {
+    color: var(--gold);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+@media only screen and (min-width: 50em) {
+    footer {
+        background-size: contain;
+        background-position: right;
+    }
+    input {
+        margin-right: 18px;
+        width: 250px;
+    }
+    button.frm-btn {
+        width: 200px;
+    }
+    .thanks {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

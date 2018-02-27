@@ -316,7 +316,7 @@ function initMap() {
     hotel1620Marker.addListener('click', () => hotel1620MapInfo.classList.replace('map-hide', 'map-show'));
     
     mapClose.forEach(function (mapBtn) {
-        mapBbtn.addEventListener('click', function () {
+        mapBtn.addEventListener('click', function () {
             this.parentNode.classList.replace('map-show', 'map-hide');
         });
     });

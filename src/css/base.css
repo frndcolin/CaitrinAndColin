@@ -1,11 +1,10 @@
 :root {
-    --bp-lg: 1000;
-    --bp-md: 800;
-    --bp-sm: 500;
+    --bp-lg: 70em;
+    --bp-md: 50em;
+    --bp-sm: 30em;
 }
-
 html, body {
-    background-color: #f9f9f9;
+    background-color: var(--white);
     box-sizing: border-box;
     color: #444;
     font-family: 'Raleway', sans-serif;
@@ -15,16 +14,11 @@ html, body {
     position: relative;
     scroll-behavior: smooth;
 }
-main {
-    overflow: hidden;
-    width: 100%;
-    margin: 0 auto;
-}
 header {
     background-color: #28324A;
-    background-image: url(../../public/img/header-bg-414X736.jpg);
+    background-image: url(../img/header-bg-720X1280.jpg);
     background-attachment: fixed;
-    background-position: center;
+    background-position: center right;
     background-size: cover;
     margin: 0;
     padding: 0;
@@ -33,51 +27,17 @@ header {
     max-height: calc((9 / 16) * 100%);
     width: 100%;
 }
-@media only screen and (min-width: 420px) {
-    header{
-        background-image: url('../../public/img/header-bg-640X360.jpg');
-        background-position: 80%
-    }
-}
-@media only screen and (min-width: 1000px) {
-    header{
-        background-image: url('../../public/img/_MG_6898.jpg');
-        background-position: 0 -180px 
-    }
+main {
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
 }
 section {
     margin: 0;
-    min-height: 50vh;
+    min-height: 75vh;
     padding: 0;
     width: 100%;
 }
-
-footer {
-    background-color: var(--blue);
-    color: var(--white);
-    padding: 30px 0;
-    min-height: 40vh;
-}
-
-form {
-    margin: 5px auto 40px;
-    text-align: center;
-    padding: 5px 7px;
-}
-
-input {
-    margin: 4px 18px 4px 0;   
-    font-size: 14px;
-    color: var(--white);
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid var(--gold);
-    border-left: 2px solid var(--gold);
-    border-radius: 0;
-    padding: 8px;
-    width: 220px;
-}
-
 h1 {
     font-size: calc(54px + (105 - 54) * ((100vw - 300px) / (1600 - 300)));
     font-family: 'Prata', serif;
@@ -87,7 +47,6 @@ h1 {
     letter-spacing: 0.05em;
     margin: 0;
 }
-
 h2 {
     font-family: 'Great Vibes', serif;
     font-size: 60px;
@@ -96,7 +55,6 @@ h2 {
     margin: 0 0 15px 0;
     text-align: center;
 }
-
 p {
     font-family: 'Raleway', sans-serif;
     line-height: 1.418;
@@ -105,6 +63,21 @@ p {
     text-align: center;
     width: 95%;
 }
+a {
+    color: inherit; 
+    text-decoration: none;
+    text-transform: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    position: relative;
+}
+@media only screen and (min-width: 30em) {
+    header{
+        background-image: url('../img/_MG_6898.jpg');
+        background-position: center right;
+    }
+}
+
 @media only screen and (min-width: 600px){
     .grid--2-col  p {
         max-width: 70%;

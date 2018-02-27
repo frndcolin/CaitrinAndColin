@@ -1,41 +1,67 @@
-nav.main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.menu {
+    background-color: var(--blue);
     font-family: 'Raleway';
-    height: 80px;
+    font-size: 18px;
+    font-weight: 200;
+    letter-spacing: 1px;
     left: 0;
-    position: absolute;
-    top: 0;
+    display: block;
+    position: fixed;
+    top: -110%;
     width: 100%;
-    z-index: 9999;
+    z-index: 700;
+    transition: all 0.3s;
+    height: 100vh;
 }
-
+.nav-btn {
+    border-radius: 5px;
+    display: block;
+    width: 50px;
+    height: 50px;    
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    z-index: 999;
+    transition: all 0.5s;
+}
+.nav-btn img {
+    width: 100%;
+    height: auto;
+}
+.menu.open {
+    top: 0;
+}
+.nav-btn.pressed {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    background-color: var(--blue);
+    background-image: url("../img/close.svg");
+    background-size: contain;
+}
+.nav-btn.pressed img {
+    opacity: 0;
+}
 .main-nav {
     list-style: none;
-    padding: 30px;
-    margin: 0;
-    display: none;
+    display: flex;
+    padding: 0;
+    margin: 50px 0 0;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 80vh
+} 
+.main-nav .nav-item {
+    padding: 5px;
+    margin: 0 7px;
+    text-align: center;
 }
-@media only screen and (min-width: 50em) {
-    .main-nav {
-        display: block;
-    }
-}
-.nav-item, .nav-item a {
-    color: #fff;
+.nav-item {
+    color: var(--white);
     display: inline-block;
-    font-size: 18px;
-    letter-spacing: 1px;
     margin: 0 6px;
     position: relative;
-    text-decoration: none;
-}
-.main .nav-item a {
-    font-weight: 200;
-    margin: 0;
-    padding: 5px;
-    transition: all 0.1s;
+    text-transform: uppercase;
 }
 .nav-item a::after {
     content: '';
@@ -45,11 +71,29 @@ nav.main {
     background-color: var(--gold);
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: -4px;
     transform: translateX(-50%);
     transition: width 0.4s
 }
 
-.nav-item a:hover::after {
+.nav-item a:hover::after, .nav-item a:active::after {
     width: 100%;
+}
+
+@media only screen and (min-width: 55em) {
+    .menu {
+        background-color: transparent;
+        position: absolute;
+        top: 0;
+    }
+    .main-nav {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        height: 80px;
+    }
+    .nav-btn {
+        display: none;
+    }
 }

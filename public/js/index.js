@@ -1,7 +1,6 @@
 'use strict';
 
 (function () {
-    var a = this;
 
     //----------------------------------------------------------
     //              Init global vendor libs
@@ -22,7 +21,7 @@
 
     AOS.init({
         disable: window.innerWidth < 720,
-        duration: 1000,
+        duration: 500,
         easing: 'ease-in-sine',
         once: true
     });
@@ -38,10 +37,10 @@
     //----------------------------------------------------------
     c.forEach(function (b) {
         b.addEventListener('mouseover', function () {
-            a.classList.toggle('pulse');
+            this.classList.toggle('pulse');
         });
         b.addEventListener('mouseleave', function () {
-            a.classList.toggle('pulse');
+            this.classList.toggle('pulse');
         });
     });
 })();
