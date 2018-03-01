@@ -9,11 +9,11 @@ html(lang='en')
         meta(name='description' content='...')
         //-   <!-- link(rel='prefetch' href='...js file'-->
         
-        link(href='https://fonts.googleapis.com/css?family=Great+Vibes|Raleway|Prata' rel='stylesheet')
-        link(rel='stylesheet' href='./vendor/normalize.css')
-        link(rel='stylesheet' href='./vendor/animate.css')
-        link(rel='stylesheet' href='./vendor/aos.css')
-        link(rel='stylesheet' href='./css/bundled.css')
+        link(href='https://fonts.googleapis.com/css?family=Great+Vibes|Raleway:200,400|Playfair+Display' rel='stylesheet' type="text/css")
+        link(rel='stylesheet' href='./vendor/normalize.css' type="text/css")
+        link(rel='stylesheet' href='./vendor/animate.css' type="text/css")
+        link(rel='stylesheet' href='./vendor/aos.css' type="text/css")
+        link(rel='stylesheet' href='./css/bundled.css' type="text/css")
         //-    <!--        // Global site tag (gtag.js) - Google Analytics-->
         script(async type='text/javascript' src='https://www.googletagmanager.com/gtag/js?id=UA-109028742-2')
     body
@@ -26,12 +26,9 @@ html(lang='en')
                     li.nav-item: a(href="#photographs") Photographs
                     li.nav-item: a(href="#registries") Gift Registries
             span(class='nav-btn'): img(src='./img/bars.svg')
-            canvas#canvas-image-blending
             .names
-                h1 Caitrin 
-                h1.name--colin #[span.and &] Colin
-            .full-date
-                span DECEMBER 1, 2018
+                h1 Caitrin #[span.and &] Colin
+                span.full-date DECEMBER 1, 2018
         main
             section#welcome
                 include partials/welcome.pug
@@ -41,7 +38,7 @@ html(lang='en')
                 include partials/accommodations.pug
             section#things-to-do.grid--2-col
                 include partials/things-todo.pug
-            section#photographs(style="background-color: #FFECE5")
+            section#photographs
                 include partials/photographs.pug
             section#registries
                 .container
@@ -66,12 +63,11 @@ html(lang='en')
                     button(type="submit" class="btn frm-btn") Submit
             p.thanks Special thanks to #[a(href="#") Ben Boynton Photography]
     
-    script(src="./vendor/granim.min.js")
+    script(src="./js/g-map.js")
+    script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl5Bletj_g8V6KqWBKJ8ZYCuKkiAD4i1s&callback=initMap" type="text/javascript")    
     script(src="./vendor/aos.js")
     script(src="./js/index.js")
     script(src="./js/display.js")
-    script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl5Bletj_g8V6KqWBKJ8ZYCuKkiAD4i1s&callback=initMap" type="text/javascript")
-    script(src="./js/g-map.js")
     script.
         var galleryImg = document.querySelectorAll('.gallery-item img');
         var modal = document.querySelector('.img-box');

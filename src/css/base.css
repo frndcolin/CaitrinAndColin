@@ -8,7 +8,7 @@ html, body {
     box-sizing: border-box;
     color: #444;
     font-family: 'Raleway', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     margin: 0;
     padding: 0;
     position: relative;
@@ -16,16 +16,17 @@ html, body {
 }
 header {
     background-color: #28324A;
-    background-image: url(../img/header-bg-720X1280.jpg);
+    background-image: url("http://res.cloudinary.com/frndcolin/image/upload/w_500,h_700,dpr_auto,c_fill,g_faces:center/v1519797186/wedding-site/img015.jpg");
     background-attachment: fixed;
-    background-position: center right;
     background-size: cover;
+    background-position: center;
     margin: 0;
     padding: 0;
     position: relative;
     height: 100vh;
     max-height: calc((9 / 16) * 100%);
     width: 100%;
+    overflow: hidden;
 }
 main {
     overflow: hidden;
@@ -39,25 +40,24 @@ section {
     width: 100%;
 }
 h1 {
-    font-size: calc(54px + (105 - 54) * ((100vw - 300px) / (1600 - 300)));
-    font-family: 'Prata', serif;
-    font-weight: 400;
+    font-size: calc(54px + (100 - 54) * ((100vw - 300px) / (1600 - 300)));
+    font-family: 'Playfair Display', serif;
+    font-weight: 200;
     text-transform: uppercase;
-    line-height: 1.1em;
-    letter-spacing: 0.05em;
-    margin: 0;
+    margin: 0 auto;
+    position: relative;
+    width: 100vw;
 }
 h2 {
-    font-family: 'Great Vibes', serif;
+    font-family: 'Great Vibes', cursive;
     font-size: 60px;
-    font-size: calc(54px + (66 - 54) * ((100vw - 300px) / (1400 - 300)));
+    font-size: calc(54px + (80 - 54) * ((100vw - 300px) / (1400 - 300)));
     font-weight: 400;
     margin: 0 0 15px 0;
     text-align: center;
 }
 p {
-    font-family: 'Raleway', sans-serif;
-    line-height: 1.418;
+    line-height: 1.318;
     margin: 0 auto;
     max-width: 800px;
     text-align: center;
@@ -73,13 +73,23 @@ a {
 }
 @media only screen and (min-width: 30em) {
     header{
-        background-image: url('../img/_MG_6898.jpg');
+        background-image: url("http://res.cloudinary.com/frndcolin/image/upload/w_800,h_500,dpr_auto,c_fill,g_faces:center/v1519797186/wedding-site/img015.jpg");
         background-position: center right;
     }
 }
 
 @media only screen and (min-width: 600px){
+    header{
+        background-image: url("http://res.cloudinary.com/frndcolin/image/upload/q_100/v1519797186/wedding-site/img015.jpg");
+        background-position: center bottom;
+    }
     .grid--2-col  p {
         max-width: 70%;
+    }
+}
+@media only screen and (min-width:80em) {
+    body {
+        font-size: 20px;
+        font-weight: 400;
     }
 }

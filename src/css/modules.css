@@ -1,16 +1,13 @@
 /*-----------------------------------------------------------------------*/
-
 /*-------------------------GENERAL ELMNTS/STYLES-------------------------*/
-
 /*-----------------------------------------------------------------------*/
 
 :root {
     --blue: #28324A;
-    --blush: #FFECE5;
     --gold: #D6A319;
     --dark-gold: #CC9C1A;
     --black: #444444;
-    --white: #FAFAFA;
+    --white: #FCFCFC;
 }
 
 .btn {
@@ -18,7 +15,8 @@
     border: 2px solid var(--gold);
     border-radius: 2px;
     color: var(--white);
-    font-size: 16px;
+    font-size: 1rem;
+    font-weight: 400;
     font-family: 'Raleway', sans-serif;
     letter-spacing: 1px;
     margin: 40px auto 0;
@@ -61,9 +59,7 @@
 }
 
 /*-----------------------------------------------------------------------*/
-
 /*-----------------------------------HEADER------------------------------*/
-
 /*-----------------------------------------------------------------------*/
 
 header:before {
@@ -74,8 +70,7 @@ header:before {
     content: '';
     width: 100%;
     height: 100%;
-    background-color: var(--blue);
-    opacity: 0.45;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.25), rgba(40, 50, 75, 0.05)), linear-gradient(rgba(214, 163, 25, 0.25), rgba(40, 50, 75, 0.05), rgba(40, 50, 75, 0.6));
 }
 
 .names {
@@ -85,100 +80,68 @@ header:before {
     left: 0;
     width: 100%;
     text-align: center;
+    text-shadow: 0 0 18px rgba(40, 50, 75, 0.32);
     transform: translateY(-50%);
 }
 
-.name--colin {
-    width: 100%;
-    text-align: center
-}
-
 .and {
-    font-family: 'Great Vibes';
     color: var(--gold);
     font-size: 1.3em;
+    line-height: 0.5;
+    margin: 5px -12px 5px -10px;
+    display: block;
 }
 
 .full-date {
     color: var(--white);
-    font-size: 28px;
-    font-size: calc(22px + (30 - 22) * ((100vw - 360px) / (1600 - 360)));
+    font-size: 20px;
+    font-size: calc(20px + (28 - 20) * ((100vw - 360px) / (1600 - 360)));
     font-family: 'Raleway', sans-serif;
-    font-weight: 200;
-    letter-spacing: 0.2em;
+    font-weight: 400;
+    letter-spacing: 3px;
     text-align: center;
+    text-transform: uppercase;
     position: absolute;
-    top: 77%;
-    top: calc(100vh - 25vh);
-    width: 100%;
-    text-align: center;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 250px;
+    max-width: 330px;
+    margin-top: 40px;
 }
 
 .full-date::before {
-    background-color: var(--white);
-    content: '';
-    opacity: 0.6;
     display: block;
+    content: '';
+    width: 50%;
     height: 1px;
-    border: none;
-    width: 100%;
+    background-color: var(--white);
     position: absolute;
-    left: 50%;
-    bottom: 1.2em;
-    transform: translateX(-50%);
+    left: -53%;
+    top: 0.55em
 }
-
 .full-date::after {
-    background-color: var(--white);
-    content: '';
-    opacity: 0.6;
     display: block;
+    content: '';
+    width: 50%;
     height: 1px;
-    border: none;
-    width: 100%;
+    background-color: var(--white);
     position: absolute;
-    left: 50%;
-    bottom: -5px;
-    transform: translateX(-50%);
+    right: -52%;
+    top: 0.55em
 }
-
 
 @media only screen and (min-width: 40em) {
-    .names {
-        left: 12.25%;
-        text-align: left;
-        top: 47%;
-        width: 60%;
-    }
-    .name--colin {
-        text-align: right;
+    .and {
+        display: inline-block;
     }
     .full-date {
-        top: calc(100vh - 20vh);
-        max-width: 12em;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    .full-date::before {
-        width: 105%
-    }
-    .full-date::after {
-        width: 95%
+        margin-top: 15px;
     }
 }
 
-@media only screen and (min-width:50em) {
-    .names {
-        left: 17%;
-        width: 47%;
-    }
-}
 
 /*-----------------------------------------------------------------------*/
-
 /*                                   WELCOME                             */
-
 /*-----------------------------------------------------------------------*/
 
 .countdown {
@@ -198,57 +161,77 @@ header:before {
     width: 100px;
     height: 95px;
     background-color: var(--blue);
-    margin: 60px 10px 0;
+    margin: 20px 10px 0;
     box-shadow: 4px 4px 18px rgba(0, 0, 0, 0.2), 2px 2px 12px rgba(0, 0, 0, 0.5);
 }
 
 .date-title {
-    color: var(--blush);
+    color: var(--white);
     align-self: end;
-    font-family: 'Raleway';
     font-size: 16px;
-    font-weight: 200;
+    font-weight: 400;
     padding: 0;
     margin: 0;
     letter-spacing: 1.4px;
     text-transform: uppercase;
+    width: 100%;
+    text-align: center;
 }
 
 [class*="date--"] {
-    font-family: 'Prata';
+    font-family: serif;
     font-size: 48px;
     align-self: center;
     color: var(--gold);
 }
-.hours, .minutes, .seconds {
+
+.hours,
+.minutes,
+.seconds {
     display: none;
 }
+
 @media only screen and (min-width: 30em) {
     .hours {
         display: grid;
     }
 }
+
 @media only screen and (min-width: 44em) {
-    .minutes, .seconds {
+    .minutes,
+    .seconds {
         display: grid;
+    }
+}
+@media only screen and (min-width: 80em) {
+    .date {
+        height: 110px;
+        width: 110px;
+    }
+    .date-title {
+        font-size: 18px;
+    }
+    [class*="date--"] {
+        font-size: 64px;
     }
 }
 
 
 /*-----------------------------------------------------------------------*/
-
 /*-----------------------------------EVENT------------------------------*/
-
 /*-----------------------------------------------------------------------*/
 
 .event-content {
     color: var(--white);
     text-align: center;
     background-color: var(--blue);
+    font-weight: 200;
 }
+
 .event-img {
     display: none;
 }
+
 .event-img img {
     width: 100%;
     height: 100%;
@@ -273,9 +256,7 @@ header:before {
 }
 
 /*-----------------------------------------------------------------------*/
-
 /*-------------------------------Accommodations----------------------------*/
-
 /*-----------------------------------------------------------------------*/
 
 .map-info {
@@ -319,33 +300,21 @@ header:before {
 }
 
 .map-info-close {
+    background-image: url("../img/close.svg");
+    background-size: contain;
     display: block;
     height: 40px;
     width: 40px;
     position: absolute;
     right: 15px;
+    opacity: 0.7;
     top: 15px;
-    z-index: 350
+    z-index: 350;
+    transition: all 0.3s;
 }
-
-.map-info-close::before,
-.map-info-close::after {
-    display: block;
-    content: '';
-    width: 30px;
-    height: 2px;
-    background-color: var(--white);
-    position: absolute;
-    top: 18px;
-    right: 5px;
-}
-
-.map-info-close::before {
-    transform: rotate(45deg);
-}
-
-.map-info-close::after {
-    transform: rotate(-45deg);
+.map-info-close:hover {
+    transform: scale(1.2);
+    opacity: 1;
 }
 
 .map-info-title h4 {
@@ -354,7 +323,6 @@ header:before {
     font-weight: 200;
     margin: 24px 0 12px;
     text-align: center;
-
 }
 
 .map-info-content {
@@ -410,31 +378,26 @@ header:before {
 }
 
 /*-----------------------------------------------------------------------*/
-
 /*-------------------------------THINGS TO DO----------------------------*/
-
 /*-----------------------------------------------------------------------*/
 
 .boston {
+    font-weight: 200;
     color: var(--white);
-    background-image: linear-gradient(rgba(40, 50, 74, 0.8), rgba(75, 85, 99, 0.5)), url('https://source.unsplash.com/1600x900/?boston, city');
+    background-image: linear-gradient(rgba(40, 50, 74, 0.8), rgba(75, 85, 99, 0.6), rgba(40, 50, 74, 0.8)), url('https://source.unsplash.com/1600x900/?boston, city');
     background-size: cover;
 }
 
 .cape-cod {
+    font-weight: 200;
     color: var(--white);
-    background-image: linear-gradient(rgba(214, 123, 25, 0.6), rgba(40, 50, 74, 0.4)), url('https://source.unsplash.com/1600x900/?beach');
+    background-image: linear-gradient(rgba(214, 123, 25, 0.6), rgba(40, 50, 74, 0.6), rgba(40, 50, 74, 0.8)), url('https://source.unsplash.com/1600x900/?beach');
     background-size: cover;
 }
 
 /*-----------------------------------------------------------------------*/
-
 /*-----------------------------------GALLERY-----------------------------*/
-
 /*-----------------------------------------------------------------------*/
-
-/*-----------------------------------------------------------------------*/
-
-/*-----------------------------------FOOTER------------------------------*/
-
-/*-----------------------------------------------------------------------*/
+#photographs {
+    background-color: #f3f5f9;
+}

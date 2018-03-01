@@ -1,24 +1,23 @@
 footer {
     background-color: var(--white);
-    background-image: linear-gradient(rgba(30, 40, 64, 0.85), rgba(30, 40, 64, 0.75)), url("../img/squirrel-fullsize.jpg");
+    background-image: linear-gradient(rgba(30, 40, 64, 0.85), rgba(30, 40, 64, 0.75)), url("http://res.cloudinary.com/frndcolin/image/upload/w_1420,dpr_auto,c_fill/v1519797186/wedding-site/squirrel.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     color: var(--white);
-    padding: 20px 0;
-    min-height: 50vh;
+    padding: 40px 0 20px 0;
     position: relative;
 }
 
 form {
     margin: 5px auto;
     text-align: center;
-    padding: 5px 7px;
+    padding: 5px 7px 40px;
 }
 
 input {
     margin: 4px auto;   
-    font-size: 16px;
+    font-size: 0.9em;
     color: var(--white);
     background-color: transparent;
     border: none;
@@ -44,14 +43,6 @@ button.frm-btn {
     color: var(--gold);
     width: 95%
 }
-
-
-
-
-
-
-
-
 
 
 .footer-nav {
@@ -95,6 +86,7 @@ button.frm-btn {
     footer {
         background-size: contain;
         background-position: right;
+        min-height: 320px;
     }
     input {
         margin-right: 18px;

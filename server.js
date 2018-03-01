@@ -25,17 +25,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res)=>{
     res.render('site/index');
 });
+// error handlers
 
 // catch 404 and forward to error handler
 //app.use(function (req, res, next) {
 //    var err = new Error('Not Found');
 //    err.status = 404;
-//    res.render('404');
+//    res.send('<h1>HELOO</h1>');
 //    next(err);
 //});
-
-// error handlers
-
 
 app.listen(port, function() {
     console.log(`Server is running on ${port}...`);

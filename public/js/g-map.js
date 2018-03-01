@@ -4,15 +4,15 @@ function initMap() {
     //-------------------------------------------------------------------
     //                      MAP ELEMENTS
     //-------------------------------------------------------------------
-    var a = document.querySelector('#hotel-1620');
-    var b = document.querySelector('#pine-hills');
-    var c = document.querySelector('#map');
-    var d = document.querySelectorAll(".map-info-close");
+    var hotel1620MapInfo = document.querySelector('#hotel-1620');
+    var pineHillsMapInfo = document.querySelector('#pine-hills');
+    var siteMap = document.querySelector('#map');
+    var mapClose = document.querySelectorAll(".map-info-close");
 
     //-------------------------------------------------------------------
     //              CUSTOM MAP COLORS AND OPTIONS
     //-------------------------------------------------------------------
-    var e = {
+    var mapOptions = {
         center: { lat: 41.9192124, lng: -70.6893377 },
         fullscreenControl: false,
         gestureHandling: 'cooperative',
@@ -197,19 +197,19 @@ function initMap() {
     //-------------------------------------------------------------------
     //              INIT MAP AND MARKERS
     //-------------------------------------------------------------------
-    var f = new google.maps.Map(c, e);
+    var map = new google.maps.Map(siteMap, mapOptions);
 
-    var g = new google.maps.Marker({
+    var pineHillsMarker = new google.maps.Marker({
         label: 'A',
         position: { lat: 41.8813911, lng: -70.5988808 },
-        map: f,
+        map: map,
         title: 'Pine Hills',
         animation: google.maps.Animation.DROP
     });
-    var h = new google.maps.Marker({
+    var hotel1620Marker = new google.maps.Marker({
         label: 'B',
         position: { lat: 41.9619713, lng: -70.6703921 },
-        map: f,
+        map: map,
         title: 'Hotel 1620',
         animation: google.maps.Animation.DROP
     });
@@ -217,15 +217,15 @@ function initMap() {
     //-------------------------------------------------------------------
     //                   ADD LISTENERS
     //-------------------------------------------------------------------
-    g.addListener('click', function () {
-        return b.classList.replace('map-hide', 'map-show');
+    pineHillsMarker.addListener('click', function () {
+        return pineHillsMapInfo.classList.replace('map-hide', 'map-show');
     });
-    h.addListener('click', function () {
-        return a.classList.replace('map-hide', 'map-show');
+    hotel1620Marker.addListener('click', function () {
+        return hotel1620MapInfo.classList.replace('map-hide', 'map-show');
     });
 
-    d.forEach(function (a) {
-        a.addEventListener('click', function () {
+    mapClose.forEach(function (mapBtn) {
+        mapBtn.addEventListener('click', function () {
             this.parentNode.classList.replace('map-show', 'map-hide');
         });
     });
