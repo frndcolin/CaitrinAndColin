@@ -1,13 +1,96 @@
-<!doctype html>
+<html class="fa-events-icons-ready">
+
+<head>
+    <style type="text/css">
+        @charset "UTF-8";
+        [ng\:cloak],
+        [ng-cloak],
+        [data-ng-cloak],
+        [x-ng-cloak],
+        .ng-cloak,
+        .x-ng-cloak,
+        .ng-hide:not(.ng-hide-animate) {
+            display: none !important;
+        }
+
+        ng\:form {
+            display: block;
+        }
+
+        .ng-animate-shim {
+            visibility: hidden;
+        }
+
+        .ng-anchor {
+            position: absolute;
+        }
+
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Playlist</title>
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Raleway|Prata" rel="stylesheet">
+    <script src="../public/vendor/zenscroll.min.js"></script>
+    <script src="https://use.fontawesome.com/6de892528c.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/6de892528c.css" media="all">
+    <link rel="stylesheet" href="../public/css/playlist.css">
+    <script src="../public/vendor/angular.min.js"></script>
+</head>
+
+<body ng-app="songApp" class="ng-scope">
+    <div class="songs ng-scope" ng-controller="SongsCtrl">
+        <h1>Songs that will make you dance!</h1>
+        <song-search ng-controller="SongSearchCntrl" class="ng-scope">
+            <form class="search-form ng-valid ng-dirty ng-valid-parse">
+                <div class="form-group"><label class="sr-only" for="track">Song Title</label><input type="text" name="title" ng-model="search.track" ng-change="clearResult()" placeholder="song title" class="ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched"></div>
+                <div class="form-group"><label class="sr-only" for="artist">Artist</label><input type="text" name="artist" ng-model="search.artist" ng-change="clearResult()" placeholder="artist" class="ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched"></div><button class="btn btn-blue" type="submit" ng-click="searchSong(search.track, search.artist, $event)">Search</button>
+                <div class="search-result" ng-show="found">
+                    <h4 ng-show="error" class="ng-binding ng-hide"></h4>
+                    <h4 ng-hide="error" class="ng-binding">So Cold, Breaking Benjamin - </h4>
+                        <a ng-href="https://www.youtube.com/results?search_query=undefined%20undefined" target="_blank" href="https://www.youtube.com/results?search_query=undefined%20undefined">
+                            <i class="fa fa-youtube-play"></i>   
+                        </a>
+                        <button class="btn btn-grn" ng-hide="error" ng-click="addSong(result, $event)">Add Song</button>
+                    
+                </div>
+                <p class="search-msg ng-hide" ng-hide="found">Search for your favorite song to add to the list</p>
+            </form>
+        </song-search>
+        <div class="list">
+            <div class="song-list">
+                <table ng-controller="SongListCntrl" class="ng-scope">
+                    <thead>
+                        <tr>
+                            <th> </th>
+                            <th>Song Title</th>
+                            <th>Artist</th>
+                            <th>Total</th>
+                            <th>Vote</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- ngRepeat: song in songs | orderBy: 'song.title' -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="../public/js/playlist.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+
+</html>
+
+
+<!--
 <html>
 
 <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no'>
-    <!--    <base href='www.catirinandcolin.com'>-->
+        <base href='www.catirinandcolin.com'>
 
     <meta name='description' content='...'>
-    <!-- link(rel='prefetch' href='...js file'-->
+     link(rel='prefetch' href='...js file'
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Playfair+Display|Raleway:200,400|Prata:200,400" rel="stylesheet">
     <link rel='stylesheet' href='../public/vendor/normalize.css'>
     <link rel='stylesheet' href='../public/vendor/animate.css'>
@@ -18,8 +101,8 @@
     <link rel='stylesheet' href='./css/modal.css'>
     <link rel='stylesheet' href='./css/layout.css'>
     <link rel='stylesheet' href='./css/nav.css'>
-    <!--        // Global site tag (gtag.js) - Google Analytics-->
-<!--    <script async type='text/javascript' src="https://www.googletagmanager.com/gtag/js?id=UA-109028742-2"></script>-->
+            // Global site tag (gtag.js) - Google Analytics
+    <script async type='text/javascript' src="https://www.googletagmanager.com/gtag/js?id=UA-109028742-2"></script>
 
 </head>
 
@@ -92,7 +175,7 @@
                 </div>
             </div>
             <div class="event-img grid-item--rgt" data-aos="flip-left">
-                <img src="http://res.cloudinary.com/frndcolin/image/upload/v1519797202/wedding-site/img0011.jpg">
+                <img src="http://res.cloudinary.com/frndcolin/image/upload/v1519797202/wedding-site/img001.jpg">
             </div>
         </section>
         
@@ -213,7 +296,7 @@
                 <div class="img-box-content">
                     <img src="">
                 </div>
-<!--
+
                 <div class="img-box-controls">
                     <div class="control control-lft">
                         <img src="../public/img/img-box-control.svg">
@@ -222,7 +305,7 @@
                         <img src="../public/img/img-box-control.svg">
                     </div>
                 </div>
--->
+
             </div>
         </section>
         
@@ -275,7 +358,7 @@
     <script>
         
     </script>
-    <!--
+
     <script>
         var granimInstance = new Granim({
             element: '#canvas-image-blending',
@@ -316,8 +399,6 @@
             once: true
         });
     </script>
--->
-    <!--
     
     <script>
         var pineHillsMapInfo = document.querySelector("#pine-hills");
@@ -331,7 +412,8 @@
             });
         });
     </script>
--->
+
 </body>
 
 </html>
+-->

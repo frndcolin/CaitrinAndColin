@@ -1,0 +1,152 @@
+(function () {
+    const songApp = angular.module('songApp', []);
+    const url = 'http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=3b1290c0aeeec4b9937434d3b63bb229';
+    var songList = [];
+    
+    //SONGS DB SERVICES
+    songApp.factory('songDB', function ($http, $q) {
+        return {
+            loadSongs: function () {
+                return $q(function (resolve, reject) {
+                    $http.get('/playlist/songs/data')
+                        .then(function (resp) {
+                            resolve(resp.data);
+                        }, (function (err) {
+                            reject(err);
+                        }));
+                });
+            },
+            addSong: function (song) {
+                return $q(function (resolve, reject) {
+                    $http.post('/playlist/songs', song)
+                        .then(function (resp) {
+                            resolve('success');
+                        }, (function (err) {
+                            reject(err);
+                        }));
+                });
+            },
+            addVote: function (id) {
+                return $q(function (resolve, reject) {
+                    $http.patch('/playlist/songs/vote', {id: id})
+                        .then(function (resp) {
+                            resolve(resp);
+                        }, (function (err) {
+                            reject(err);
+                        }));
+                });
+            }
+        }
+    });
+
+    //SONGS SEARCH SERVICE
+    songApp.factory('searchSong', function ($http, $q) {
+        return {
+            search: function (song, artist) {
+                return $q(function (resolve, reject) {
+                    let search = url + '&artist=' + encodeURIComponent(artist) + '&track=' + encodeURIComponent(song) + '&format=json';
+                    
+                    $http.get(search)
+                        .then(function (resp) {
+                            console.log(resp);
+                            if (!resp.data.error) {
+                                let newSong = {
+                                    title: resp.data.track.name,
+                                    artist: resp.data.track.artist.name,
+                                    link: encodeURIComponent(this.title + " " + this.artist),
+                                    genre: [],
+                                    votes: 0
+                                };
+                                //push array of genre tags to newSong object
+                                resp.data.track.toptags.tag.forEach((tag) => {
+                                    newSong.genre.push(tag.name);
+                                });
+                                //return new song object
+                                resolve(newSong);
+                            } else {
+                                reject(resp.data.message);
+                            }
+                        }, (function (resp) {
+                            reject(resp.data.message);
+                        }));
+                });
+            }
+        };
+    });
+
+    //PARENT SONG APP CONTROLLER
+    songApp.controller('SongsCtrl', function ($scope, songDB) {
+        $scope.songs = [];
+
+        $scope.songs = songDB.loadSongs().then(function (data) {
+            $scope.songs = data;
+        }, (function (e) {
+            console.log(e);
+        }));
+    });
+
+    //SONG LIST CONTROLLER
+    songApp.controller('SongListCntrl', function ($scope, $http, songDB) {
+        
+        //add new vote to song(id) and update list without refreshing full song list
+        $scope.addVote = function (id, e) {
+            e.preventDefault();
+            //disable vote button for selected song
+            e.currentTarget.setAttribute('disabled', 'true');
+            //update songs db with new vote
+            songDB.addVote(id).then(function (resp) {
+                let i = $scope.songs.findIndex(song => song._id === resp.data.id);
+                $scope.songs[i].votes = resp.data.votes;
+            }, function (err) {
+                console.log(err);
+            });
+        };
+    });
+
+    //SEARCH SONG CONTROLLER
+    songApp.controller('SongSearchCntrl', function ($scope, $http, songDB, searchSong) {
+        let $s = $scope;
+        $s.search = {
+            track: '',
+            artist: '',
+        };
+        $s.result = {};
+        $s.found = false;
+        $s.error = false;
+        $s.errorMsg = '';
+
+        $s.clearResult = function () {
+            $s.found = false;
+            $s.error = false;
+        };
+        
+        $s.searchSong = function (song, artist, e) {
+            e.preventDefault();
+            
+            searchSong.search(song, artist)
+                .then(function (data) {
+                    $s.result = data;
+                    $s.error = false;
+                }, (function (err) {
+                    $s.error = true;
+                    $s.errorMsg = err;
+                    $s.result = {};
+                }));
+            
+            $s.found = true;
+        };
+        
+        $scope.addSong = function (track, e) {
+            e.preventDefault();
+            let newSong = track;
+            
+            songDB.addSong(newSong)
+                .then(function(){
+                    $s.found = false;
+                    location.reload();
+                },(function(err){
+                    console.log(err);
+                }));
+        };
+    });
+}());
