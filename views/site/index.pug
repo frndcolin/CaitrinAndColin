@@ -15,7 +15,7 @@ html(lang='en')
         link(rel='stylesheet' href='./vendor/aos.css' type="text/css")
         link(rel='stylesheet' href='./css/bundled.css' type="text/css")
         //-    <!--        // Global site tag (gtag.js) - Google Analytics-->
-        script(async type='text/javascript' src='https://www.googletagmanager.com/gtag/js?id=UA-109028742-2')
+        script(async type='text/javascript' src='https://www.googletagmanager.com/gtag/js?id=UA-109028742-2')    
     body
         header
             nav#main(class='menu')
@@ -43,28 +43,29 @@ html(lang='en')
             section#registries
                 .container
                     h2 Gift Registries
-                    p(style="margin:20px 0 0") Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta.
-                    p(style="margin:20px 0 0") Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta.
-                    p(style="margin:20px 0 0") Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta.
-        footer
+                    .registry-list
+                        a(class='registry' href='https://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?registryId=545165790&eventType=Wedding&pwsurl' target='_blank')
+                            img(src='./img/bbb.png')
+                        a(class='registry' href='https://www.zola.com/registry/caitrinandcolin' target='_blank')
+                            img(src='./img/Zola-Logo.png')
+        footer   
             ul.footer-nav
                 li.nav-item: a(href="#events") Events
                 li.nav-item: a(href="#accommodations") Accommodations
                 li.nav-item: a(href="#things-to-do") Things To Do
                 li.nav-item: a(href="#photographs") Photographs
                 li.nav-item: a(href="#registries") Gift Registries
-                li.nav-item: a(href="#events") Pine Hills
-                li.nav-item: a(href="#accommodations") Hotel 1620
+                li.nav-item: a(href="http://pinehillspaviliongrille.com/pavilion/weddings/" target='_blank') Pinehills
+                li.nav-item: a(href="https://www.hotel1620.com/" target='_blank') Hotel 1620
                 li.nav-item: a(href="#") Playlist App
             .footer-content
                 p Sign up to be notified of any updates!
                 form
                     input(type="email" placeholder="e-mail@mail.com" required)
                     button(type="submit" class="btn frm-btn") Submit
-            p.thanks Special thanks to #[a(href="#") Ben Boynton Photography]
-    
+            p.thanks Special thanks to #[a(href="mailto:friendwalsh2018@gmail.com") Ben Boynton Photography]
     script(src="./js/g-map.js")
-    script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl5Bletj_g8V6KqWBKJ8ZYCuKkiAD4i1s&callback=initMap" type="text/javascript")    
+    script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl5Bletj_g8V6KqWBKJ8ZYCuKkiAD4i1s&callback=initMap" type="text/javascript")
     script(src="./vendor/aos.js")
     script(src="./js/index.js")
     script(src="./js/display.js")

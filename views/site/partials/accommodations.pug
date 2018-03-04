@@ -1,30 +1,41 @@
 - 
-    var locals = [
-        {"id": "pine-hills", 
-        "title": "Pine Hills Country Club", 
-        "address": "http://pinehillspaviliongrille.com/pavilion/weddings/", 
-        "directions": "https://www.google.com/maps/dir//Pinehills+Golf+Club,+54+Clubhouse+Dr,+Plymouth,+MA+02360/@41.8858352,-70.5964869,17z", 
-        "info": "Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket."},
-        {"id": "hotel-1620", 
-        "title": "Hotel 1620", 
-        "address": "https://www.hotel1620.com/", 
-        "directions": "https://www.google.com/maps/dir//Hotel+1620+Plymouth+Harbor,+Water+Street,+Plymouth,+MA/@41.961762,-70.7402986,12z", 
-        "info": "Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket."}]
+    var phills = {"address": "http://pinehillspaviliongrille.com/pavilion/weddings/", "directions": "https://www.google.com/maps/dir//Pinehills+Golf+Club,+54+Clubhouse+Dr,+Plymouth,+MA+02360/@41.8858352,-70.5964869,17z"};
+    var h1620 = {"address": "https://www.hotel1620.com/", "directions": "https://www.google.com/maps/dir//Hotel+1620+Plymouth+Harbor,+Water+Street,+Plymouth,+MA/@41.961762,-70.7402986,12z"};
 .container
     h2 Accommodations
     p.
-        Jerky pork turkey shankle t-bone porchetta pastrami meatloaf pork loin andouille pancetta. Ribeye venison pastrami, meatball strip steak jowl chicken drumstick buffalo andouille brisket. Beef ribs capicola short loin kevin, salami drumstick pastrami brisket porchetta bresaola pig strip steak. Kevin bresaola ham, cow buffalo short loin biltong t-bone.
-    a(class='btn animated' href='#' target='_blank' data-aos='zoom-in') Make Reservation
+        Special rates have been reserved for our guests at Hotel 1620 Plymouth Harbor, just 15 minutes from Pinehills. Transportation will be provided to and from Hotel 1620 to Pinehills prior to the ceremony and after the reception. When making the reservation make sure to enter the #[span(class="discount") promo code "walsh"] to get the special rate.
+    br
+    p Hotel 1620 Plymouth Harbor
+    p 180 Water St, Plymouth MA 02360
+    p: a(href='https://www.hotel1620.com/') www.hotel1620.com
+    p: a(href='tel:1-508-747-4900') 1-508-747-4900
+    .btn-group
+        a(class='btn animated' href='https://www.hotel1620.com/' target='_blank' data-aos='zoom-in') Make Reservation
+        a(class='btn btn-ghost animated' href=h1620.directions target='_blank' data-aos='zoom-in') Directions
 .locations
+    span.map-title Click on the locations for more information
     each local in locals
-        .map-info(id=local.id class='map-hide')
+        .map-info(id='pine-hills' class='map-hide')
             .map-info-close
             .map-info-body
                 .map-info-title
-                    h4= local.title
+                    h4 Pinehills Golf Club
                 .map-info-content
-                    p= local.info
+                    p.
+                        The Pavilion is a warm and rustic inspired clubhouse nestled in the rolling hills of the Pinehills community of Plymouth, Ma.  It offers a unique setting with its airy vaulted ceilings, exposed wood beams, and wall of windows overlooking the beautifully manicured golf course.    
                     .map-btns
-                        a(class='map-info-btn' href=local.directions target='_blank') Directions
-                        a(class='map-info-btn' href=local.address target='_blank') Web Site    
+                        a(class='map-info-btn' href=phills.directions target='_blank') Directions
+                        a(class='map-info-btn' href=phills.address target='_blank') Web Site
+        .map-info(id='hotel-1620' class='map-hide')
+            .map-info-close
+            .map-info-body
+                .map-info-title
+                    h4 Hotel 1620 Plymouth Harbor
+                .map-info-content
+                    p.
+                        Situated across the street from the bay, Hotel 1620 Plymouth Harbor offers spacious, beautifull accommodations. With free parking, complimentary WiFi and courteous, and attentive guest service. Be sure to enter the #[span(class="discount") promo code "walsh"] when making your reservation.
+                    .map-btns
+                        a(class='map-info-btn' href=h1620.directions target='_blank') Directions
+                        a(class='map-info-btn' href=h1620.address target='_blank') Web Site
     #map

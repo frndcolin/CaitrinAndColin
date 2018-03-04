@@ -1,5 +1,7 @@
 /*-----------------------------------------------------------------------*/
+
 /*-------------------------GENERAL ELMNTS/STYLES-------------------------*/
+
 /*-----------------------------------------------------------------------*/
 
 :root {
@@ -7,7 +9,7 @@
     --gold: #D6A319;
     --dark-gold: #CC9C1A;
     --black: #444444;
-    --white: #FCFCFC;
+    --white: #FFFFFF;
 }
 
 .btn {
@@ -25,7 +27,7 @@
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
-    transition: all 0.2s;
+    transition: all 0.3s;
 }
 
 .btn-ghost {
@@ -40,6 +42,15 @@
     color: var(--white);
 }
 
+.btn-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr; 
+    margin: 40px auto 0;
+}
+.btn-group .btn {
+    margin: 5px 10px;
+}
 .hide {
     display: none !important;
 }
@@ -58,8 +69,19 @@
     height: 100%;
 }
 
+@media only screen and (min-width: 30em) {
+    .btn-group {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    .btn-group .btn {
+        margin: 0 10px;
+    }
+}
 /*-----------------------------------------------------------------------*/
+
 /*-----------------------------------HEADER------------------------------*/
+
 /*-----------------------------------------------------------------------*/
 
 header:before {
@@ -70,7 +92,7 @@ header:before {
     content: '';
     width: 100%;
     height: 100%;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.25), rgba(40, 50, 75, 0.05)), linear-gradient(rgba(214, 163, 25, 0.25), rgba(40, 50, 75, 0.05), rgba(40, 50, 75, 0.6));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(40, 50, 75, 0.1)), linear-gradient(rgba(214, 163, 25, 0.25), rgba(40, 50, 75, 0.05), rgba(40, 50, 75, 0.6));
 }
 
 .names {
@@ -119,6 +141,7 @@ header:before {
     left: -53%;
     top: 0.55em
 }
+
 .full-date::after {
     display: block;
     content: '';
@@ -141,7 +164,9 @@ header:before {
 
 
 /*-----------------------------------------------------------------------*/
+
 /*                                   WELCOME                             */
+
 /*-----------------------------------------------------------------------*/
 
 .countdown {
@@ -150,6 +175,7 @@ header:before {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
 }
 
 .date {
@@ -162,7 +188,7 @@ header:before {
     height: 95px;
     background-color: var(--blue);
     margin: 20px 10px 0;
-    box-shadow: 4px 4px 18px rgba(0, 0, 0, 0.2), 2px 2px 12px rgba(0, 0, 0, 0.5);
+    box-shadow: -2px 4px 8px rgba(0, 0, 0, 0.6), 2px 2px 12px rgba(0, 0, 0, 0.5);
 }
 
 .date-title {
@@ -203,7 +229,8 @@ header:before {
         display: grid;
     }
 }
-@media only screen and (min-width: 80em) {
+
+@media only screen and (min-width: 90em) {
     .date {
         height: 110px;
         width: 110px;
@@ -216,9 +243,83 @@ header:before {
     }
 }
 
+.playlist {
+    box-shadow: -2px 3px 12px #888;
+    position: absolute;
+    background-color: var(--gold);
+    top: 5%;
+    width: 320px;
+    overflow: hidden;
+    transform: translateY(-50%);
+    padding: 20px 0 0 30px;
+    right: -285px;
+    height: 40px;
+    z-index: 700;
+    transition: all 0.3s
+}
 
+.playlist-btn {
+    position: absolute;
+    top: 10px;
+    display: block;
+    background-color: var(--gold);
+    content: '';
+    left: 7px;
+    width: 50px;
+    height: 50px;
+    animation-iteration-count: infinite;
+    background-size: 80% 80%;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-image: url('../img/music.svg');
+}
+
+.playlist-body {
+    height: 0;
+    overflow: hidden;
+    font-size: 20px;
+    font-weight: 200;
+    color: var(--white);
+    padding: 0;
+    width: 280px;
+    margin: 30px auto 40px;
+}
+
+.playlist-body > h3 {
+    font-size: inherit;
+    font-weight: 200;
+    text-align: center;
+    line-height: 1.3
+}
+
+.playlist-body > a {
+    border: 1px solid var(--blue);
+    background-color: var(--blue);
+    display: block;
+    padding: 12px;
+    font-weight: 400;
+    width: 180px;
+    margin: 0 auto;
+}
+.playlist.opened {
+    height: 270px;
+    width: 330px;
+    top: 53%;
+    right: 0;
+}
+.playlist.opened > .playlist-body {
+    height: auto;
+}
+@media only screen and (min-width: 50em){
+    .playlist {
+        position: fixed;
+        top:35%;
+    }
+}
 /*-----------------------------------------------------------------------*/
+
 /*-----------------------------------EVENT------------------------------*/
+
 /*-----------------------------------------------------------------------*/
 
 .event-content {
@@ -229,6 +330,8 @@ header:before {
 }
 
 .event-img {
+    width: 100%;
+    height: 100%;
     display: none;
 }
 
@@ -254,11 +357,31 @@ header:before {
     letter-spacing: 0.5px;
     margin: 12px 0;
 }
-
+.highlight {
+    color: var(--gold);
+    font-weight: 400;
+    font-size: 1.15em
+}
 /*-----------------------------------------------------------------------*/
+
 /*-------------------------------Accommodations----------------------------*/
-/*-----------------------------------------------------------------------*/
 
+/*-----------------------------------------------------------------------*/
+.discount {
+    color: var(--gold);
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+.map-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 88;
+    background-color: rgba(40, 50, 75, 0.6);
+    color: var(--white);
+    padding: 4px 10px;
+}
 .map-info {
     background-color: rgba(40, 50, 74, 0.85);
     color: var(--white);
@@ -278,7 +401,7 @@ header:before {
     grid-template-rows: 1fr;
     justify-content: center;
     align-content: center;
-    width: 40%;
+    width: 60%;
     position: relative;
 }
 
@@ -312,6 +435,7 @@ header:before {
     z-index: 350;
     transition: all 0.3s;
 }
+
 .map-info-close:hover {
     transform: scale(1.2);
     opacity: 1;
@@ -319,7 +443,7 @@ header:before {
 
 .map-info-title h4 {
     font-family: 'Great Vibes', sans-serif;
-    font-size: 32px;
+    font-size: 38px;
     font-weight: 200;
     margin: 24px 0 12px;
     text-align: center;
@@ -378,26 +502,84 @@ header:before {
 }
 
 /*-----------------------------------------------------------------------*/
-/*-------------------------------THINGS TO DO----------------------------*/
-/*-----------------------------------------------------------------------*/
 
+/*-------------------------------THINGS TO DO----------------------------*/
+
+/*-----------------------------------------------------------------------*/
+#things-to-do .container { 
+    padding: 40px 0 !important
+}
 .boston {
     font-weight: 200;
     color: var(--white);
-    background-image: linear-gradient(rgba(40, 50, 74, 0.8), rgba(75, 85, 99, 0.6), rgba(40, 50, 74, 0.8)), url('https://source.unsplash.com/1600x900/?boston, city');
+    background-image: linear-gradient(rgba(40, 50, 74, 0.8), rgba(40, 50, 74, 0.9)), url('../img/boston.jpg');
     background-size: cover;
 }
 
 .cape-cod {
     font-weight: 200;
     color: var(--white);
-    background-image: linear-gradient(rgba(214, 123, 25, 0.6), rgba(40, 50, 74, 0.6), rgba(40, 50, 74, 0.8)), url('https://source.unsplash.com/1600x900/?beach');
+    background-image: linear-gradient(rgba(214, 123, 25, 0.4), rgba(40, 50, 74, 0.8), rgba(40, 50, 74, 0.9)), url('../img/chatham.jpg');
     background-size: cover;
 }
 
+.todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    height: 180px;
+}
+.todo-list li {
+    margin: 8px 0;
+    font-weight: 400;
+}
+.todo-list li a:link, .todo-list li a:visited {
+    padding: 4px;
+    text-decoration: none;
+    transition: all 0.1s;
+}
+.todo-list li a:hover, .todo-list li a:active {
+    font-size: 1.1em;
+    color: var(--gold);
+}
 /*-----------------------------------------------------------------------*/
+
 /*-----------------------------------GALLERY-----------------------------*/
+
 /*-----------------------------------------------------------------------*/
+
 #photographs {
     background-color: #f3f5f9;
+}
+
+
+
+
+
+/*-----------------------------------------------------------------------*/
+
+/*-----------------------------------REGISTRY----------------------------*/
+
+/*-----------------------------------------------------------------------*/
+
+.registry-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.registry {
+    display: inline-block;
+    margin: 0 40px;
+}
+.registry img {
+    width: 250px;
+    height: auto;
+    transition: all 0.2s;
+}
+.registry img:hover {
+    transform: scale(1.1);
 }
