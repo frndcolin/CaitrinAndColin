@@ -69,9 +69,8 @@ html(lang='en')
     script(src="./js/display.js")
     script(src="./js/g-map.js")
     script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl5Bletj_g8V6KqWBKJ8ZYCuKkiAD4i1s&callback=initMap" type="text/javascript")
-        //-    REMOVE COMMENT IN PROD TO INIT ANALYTICS
-        //-    script.
-        //-        window.dataLayer = window.dataLayer || [];
-        //-        function gtag(){dataLayer.push(arguments);}
-        //-        gtag('js', new Date());
-        //-        gtag('config', 'UA-109028742-2');
+    script.
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-109028742-2');
