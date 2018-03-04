@@ -64,51 +64,11 @@ html(lang='en')
                     input(type="email" placeholder="e-mail@mail.com" required)
                     button(type="submit" class="btn frm-btn") Submit
             p.thanks Special thanks to #[a(href="mailto:friendwalsh2018@gmail.com") Ben Boynton Photography]
-    script(src="./js/g-map.js")
-    script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl5Bletj_g8V6KqWBKJ8ZYCuKkiAD4i1s&callback=initMap" type="text/javascript")
     script(src="./vendor/aos.js")
     script(src="./js/index.js")
     script(src="./js/display.js")
-    script.
-        var galleryImg = document.querySelectorAll('.gallery-item img');
-        var modal = document.querySelector('.img-box');
-        var modalImg = document.querySelector('.img-box-content img');
-        var modalClose = document.querySelector('.img-box-close');
-
-        galleryImg.forEach(function(img) {
-            img.addEventListener('click', function(e) {
-                e.stopPropagation();
-                var source = this.getAttribute('src');
-                modalImg.setAttribute('src', source);
-                modal.classList.toggle('zoomIn');
-                modal.classList.remove('zoomOut');
-            });
-        });
-
-        modalClose.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            modal.classList.replace('zoomIn', 'zoomOut');
-        });
-        
-        
-        var navbar = document.querySelector('.menu');
-        var navLinks = document.querySelectorAll('.main-nav .nav-item');
-        var navBtn = document.querySelector('.nav-btn');
-        
-        navBtn.addEventListener('click', function () {
-            navbar.classList.toggle('open');
-            this.classList.toggle('pressed');
-        });
-        
-        navLinks.forEach(function (link) {
-            link.addEventListener('click', function () {
-                if(navbar.classList.contains('open')){
-                    navbar.classList.toggle('open');
-                    navBtn.classList.toggle('pressed');
-                }
-            });
-        });
+    script(src="./js/g-map.js")
+    script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl5Bletj_g8V6KqWBKJ8ZYCuKkiAD4i1s&callback=initMap" type="text/javascript")
         //-    REMOVE COMMENT IN PROD TO INIT ANALYTICS
         //-    script.
         //-        window.dataLayer = window.dataLayer || [];

@@ -294,14 +294,14 @@ function initMap() {
     var map = new google.maps.Map(siteMap, mapOptions);
 
     var pineHillsMarker = new google.maps.Marker({
-        label: 'A',
+        icon: 'http://res.cloudinary.com/frndcolin/image/upload/v1520130197/wedding-site/pinehillsmarker.png',
         position: {lat: 41.8813911, lng: -70.5988808},
         map: map,
         title: 'Pine Hills',
         animation: google.maps.Animation.DROP
     });
     var hotel1620Marker = new google.maps.Marker({
-        label: 'B',
+        icon: 'http://res.cloudinary.com/frndcolin/image/upload/v1520094237/wedding-site/hotel1620marker.png',
         position: {lat: 41.9619713, lng: -70.6703921},
         map: map,
         title: 'Hotel 1620',
