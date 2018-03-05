@@ -1,17 +1,10 @@
 'use strict';
 
 function initMap() {
-    //-------------------------------------------------------------------
-    //                      MAP ELEMENTS
-    //-------------------------------------------------------------------
     var hotel1620MapInfo = document.querySelector('#hotel-1620');
     var pineHillsMapInfo = document.querySelector('#pine-hills');
     var siteMap = document.querySelector('#map');
     var mapClose = document.querySelectorAll(".map-info-close");
-
-    //-------------------------------------------------------------------
-    //              CUSTOM MAP COLORS AND OPTIONS
-    //-------------------------------------------------------------------
     var mapOptions = {
         center: { lat: 41.9192124, lng: -70.6893377 },
         fullscreenControl: false,
@@ -193,12 +186,7 @@ function initMap() {
             }]
         }]
     };
-
-    //-------------------------------------------------------------------
-    //              INIT MAP AND MARKERS
-    //-------------------------------------------------------------------
     var map = new google.maps.Map(siteMap, mapOptions);
-
     var pineHillsMarker = new google.maps.Marker({
         icon: 'http://res.cloudinary.com/frndcolin/image/upload/v1520130197/wedding-site/pinehillsmarker.png',
         position: { lat: 41.8813911, lng: -70.5988808 },
@@ -213,17 +201,12 @@ function initMap() {
         title: 'Hotel 1620',
         animation: google.maps.Animation.DROP
     });
-
-    //-------------------------------------------------------------------
-    //                   ADD LISTENERS
-    //-------------------------------------------------------------------
     pineHillsMarker.addListener('click', function () {
         return pineHillsMapInfo.classList.replace('map-hide', 'map-show');
     });
     hotel1620Marker.addListener('click', function () {
         return hotel1620MapInfo.classList.replace('map-hide', 'map-show');
     });
-
     mapClose.forEach(function (mapBtn) {
         mapBtn.addEventListener('click', function () {
             this.parentNode.classList.replace('map-show', 'map-hide');

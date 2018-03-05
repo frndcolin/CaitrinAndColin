@@ -6,7 +6,6 @@ const router = express.Router();
 /* GET home page. */
 router.get('/', function (req, res) {
     res.render('site/index', { title: 'Caitrin & Colin are getting married!' });
-//    res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 module.exports = router;

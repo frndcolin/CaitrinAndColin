@@ -20,6 +20,15 @@ gulp.task('css', function () {
         .pipe(gulp.dest('./public/css'));
 });
 
+gulp.task('vendor-css', function () {
+    return gulp.src('./public/vendor/*.css')
+        .pipe(concatCss('vendor.min.css'))
+        .pipe(sourcemaps.init())
+        .pipe(postcss([cssnano()]))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('./public/css'));
+});
+
 gulp.task("g-bab", function () {
   return gulp.src("src/js/**.js")
     .pipe(babel())
