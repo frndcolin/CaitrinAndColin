@@ -27,10 +27,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/playlist', playlist);
 
-
-app.get('/', (req, res)=>{
-    res.render('site/index');
-});
 // error handlers
 
 // catch 404 and forward to error handler

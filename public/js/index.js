@@ -48,7 +48,11 @@
             modal.classList.remove('zoomOut');
         });
     });
-
+    modal.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        modal.classList.replace('zoomIn', 'zoomOut');
+    });
     modalClose.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
@@ -85,4 +89,16 @@
     playbtn.addEventListener('mouseleave', function () {
         this.classList.toggle('swing');
     });
+
+    var page = document.querySelector('#page');
+
+    function closeOpenedWindows() {
+        if (playlist.classList.contains('opened')) {
+            playlist.classList.toggle('opened');
+        }
+    }
+
+    window.onscroll = function () {
+        closeOpenedWindows();
+    };
 })();

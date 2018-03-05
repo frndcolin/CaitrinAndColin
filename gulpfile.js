@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
+var pug = require('gulp-pug');
 var babel = require("gulp-babel");
 
 //var path = require('path');
@@ -25,6 +26,11 @@ gulp.task("g-bab", function () {
     .pipe(gulp.dest("public/js"));
 });
 
+gulp.task("html", function () {
+    return gulp.src('views/site/index.pug')
+    .pipe(pug({doctype: 'html', pretty: true}))
+    .pipe(gulp.dest('public'));
+});
 //gulp.task('sitemap', function () {
 //    gulp.src('dist/index.html', {
 //            read: false
