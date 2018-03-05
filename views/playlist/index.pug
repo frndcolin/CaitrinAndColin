@@ -23,8 +23,8 @@ html
                     .search-result(ng-show="found")
                         h4(ng-show="error") {{errorMsg}}
                         h4(ng-hide="error") {{result.title}}, {{result.artist}} - 
-                            a(ng-href=`https://www.youtube.com/results?search_query={{result.link}}` target="_blank"): i.fa.fa-youtube   
-                            button.btn.btn-grn(ng-hide='error' ng-click='addSong(result, $event)') Add Song
+                        a(ng-hide='error' ng-href='{{result.link}}' target="_blank"): i.fa.fa-youtube-play   
+                        button.btn.btn-grn(ng-hide='error' ng-click='addSong(result, $event)') Add Song
                     p.search-msg(ng-hide='found') Search for your favorite song to add to the list
             .list
                 .song-list
@@ -37,11 +37,11 @@ html
                                 th Total
                                 th Vote
                         tbody
-                            tr(ng-repeat="song in songs | orderBy: 'song.title'")
-                                td {{ $index + 1 }}
-                                td: a(ng-href=`https://www.youtube.com/results?search_query={{song.link}}` target='_blank') {{ song.title }}
-                                td {{ song.artist }}
-                                td: span.badge(ng-model='song.votes') {{ song.votes }}
+                            tr(ng-repeat="song in songs | orderBy:'+title'")
+                                td {{$index + 1}}
+                                td: a(ng-href='{{song.link}}' target='_blank') {{song.title}}
+                                td {{song.artist}}
+                                td: span.badge(ng-model='song.votes') {{song.votes}}
                                 td
                                     button.btn.btn-blue(type='button' ng-click='addVote(song._id, $event)' ng-disabled="voted > 9"): i.fa.fa-thumbs-up    
     script(src='./js/playlist.js')

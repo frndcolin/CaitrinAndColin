@@ -1,6 +1,7 @@
 (function () {
     const songApp = angular.module('songApp', []);
     const url = 'http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=3b1290c0aeeec4b9937434d3b63bb229';
+    
     var songList = [];
     
     //SONGS DB SERVICES
@@ -48,15 +49,19 @@
                     
                     $http.get(search)
                         .then(function (resp) {
-                            console.log(resp);
                             if (!resp.data.error) {
                                 let newSong = {
                                     title: resp.data.track.name,
                                     artist: resp.data.track.artist.name,
-                                    link: encodeURIComponent(this.title + " " + this.artist),
+                                    link: encodeURIComponent(resp.data.track.name + " " + resp.data.track.artist.name),
                                     genre: [],
                                     votes: 0
                                 };
+                                let ytURL = `https://content.googleapis.com/youtube/v3/search?type=video&q=${newSong.title}&maxResults=5&part=snippet&key=AIzaSyAkeOuOoquw23koH3l_cm-A09TvulFO20Q`;
+                                $http.get(ytURL).then(function(resp) {
+                                    let id = resp.data.items[0].id.videoId;
+                                    newSong.link = 'https://www.youtube.com/watch?v=' + id;
+                                }).catch(function(err){console.log(err)})
                                 //push array of genre tags to newSong object
                                 resp.data.track.toptags.tag.forEach((tag) => {
                                     newSong.genre.push(tag.name);
@@ -120,18 +125,30 @@
             $s.error = false;
         };
         
+        function songInList(song, arr) {
+            return arr.some(function(arrSong) {
+               return song.toLowerCase() === arrSong.title.toLowerCase(); 
+            });
+        }
+        
         $s.searchSong = function (song, artist, e) {
             e.preventDefault();
             
-            searchSong.search(song, artist)
-                .then(function (data) {
-                    $s.result = data;
-                    $s.error = false;
-                }, (function (err) {
-                    $s.error = true;
-                    $s.errorMsg = err;
-                    $s.result = {};
-                }));
+            if(songInList(song, $scope.songs)){
+                $s.error = true;
+                $s.errorMsg = "The song you're looking for is already on the list. Add your vote!";
+                $s.result = {};
+            } else {
+                searchSong.search(song, artist)
+                    .then(function (data) {
+                        $s.result = data;
+                        $s.error = false;
+                    }, (function (err) {
+                        $s.error = true;
+                        $s.errorMsg = err;
+                        $s.result = {};
+                    }));
+            }
             
             $s.found = true;
         };
