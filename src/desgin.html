@@ -37,25 +37,37 @@
 </head>
 
 <body ng-app="songApp" class="ng-scope">
+    <h1>Songs that will make you dance!</h1>
+    
     <div class="songs ng-scope" ng-controller="SongsCtrl">
-        <h1>Songs that will make you dance!</h1>
-        <song-search ng-controller="SongSearchCntrl" class="ng-scope">
+        <div class="song-search" ng-controller="SongSearchCntrl" class="ng-scope">
+            
             <form class="search-form ng-valid ng-dirty ng-valid-parse">
-                <div class="form-group"><label class="sr-only" for="track">Song Title</label><input type="text" name="title" ng-model="search.track" ng-change="clearResult()" placeholder="song title" class="ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched"></div>
-                <div class="form-group"><label class="sr-only" for="artist">Artist</label><input type="text" name="artist" ng-model="search.artist" ng-change="clearResult()" placeholder="artist" class="ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched"></div><button class="btn btn-blue" type="submit" ng-click="searchSong(search.track, search.artist, $event)">Search</button>
+                <p class="search-msg ng-hide" ng-hide="found">Search for your favorite song to add to the list</p>
+                <div class="form-group">
+                    <label class="sr-only" for="track">Song Title</label>
+                    <input type="text" name="title" ng-model="search.track" ng-change="clearResult()" placeholder="song title" class="ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched">
+                </div>
+                
+                <div class="form-group">
+                    <label class="sr-only" for="artist">Artist</label>
+                    <input type="text" name="artist" ng-model="search.artist" ng-change="clearResult()" placeholder="artist" class="ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched">
+                </div>
+                <button class="btn btn-blue frm-btn" type="submit" ng-click="searchSong(search.track, search.artist, $event)">Search</button>
+            </form>    
                 <div class="search-result" ng-show="found">
                     <h4 ng-show="error" class="ng-binding ng-hide"></h4>
                     <h4 ng-hide="error" class="ng-binding">So Cold, Breaking Benjamin - </h4>
                         <a ng-href="https://www.youtube.com/results?search_query=undefined%20undefined" target="_blank" href="https://www.youtube.com/results?search_query=undefined%20undefined">
                             <i class="fa fa-youtube-play"></i>   
                         </a>
-                        <button class="btn btn-grn" ng-hide="error" ng-click="addSong(result, $event)">Add Song</button>
+                        <button class="btn btn-grn frm-btn" ng-hide="error" ng-click="addSong(result, $event)">Add Song</button>
                     
                 </div>
-                <p class="search-msg ng-hide" ng-hide="found">Search for your favorite song to add to the list</p>
-            </form>
-        </song-search>
+        </div>
+        
         <div class="list">
+            
             <div class="song-list">
                 <table ng-controller="SongListCntrl" class="ng-scope">
                     <thead>
@@ -68,7 +80,27 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- ngRepeat: song in songs | orderBy: 'song.title' -->
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span  class='badge'>3</span></td>
+                            <td><button class='btn btn-blue'><i class='fa fa-thumbs-up'></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span  class='badge'>3</span></td>
+                            <td><button class='btn btn-blue'><i class='fa fa-thumbs-up'></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span  class='badge'>3</span></td>
+                            <td>vote</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -87,10 +119,9 @@
 <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no'>
-        <base href='www.catirinandcolin.com'>
+    <base href='www.catirinandcolin.com'>
 
-    <meta name='description' content='...'>
-     link(rel='prefetch' href='...js file'
+    <meta name='description' content='...'> link(rel='prefetch' href='...js file'
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Playfair+Display|Raleway:200,400|Prata:200,400" rel="stylesheet">
     <link rel='stylesheet' href='../public/vendor/normalize.css'>
     <link rel='stylesheet' href='../public/vendor/animate.css'>
@@ -100,8 +131,7 @@
     <link rel='stylesheet' href='./css/footer.css'>
     <link rel='stylesheet' href='./css/modal.css'>
     <link rel='stylesheet' href='./css/layout.css'>
-    <link rel='stylesheet' href='./css/nav.css'>
-            // Global site tag (gtag.js) - Google Analytics
+    <link rel='stylesheet' href='./css/nav.css'> // Global site tag (gtag.js) - Google Analytics
     <script async type='text/javascript' src="https://www.googletagmanager.com/gtag/js?id=UA-109028742-2"></script>
 
 </head>
@@ -125,9 +155,9 @@
     </header>
     <main>
         <section id="welcome">
-            <div class="container">                
+            <div class="container">
                 <h2>Welcome</h2>
-                <p>We are so excited to celebrate our wedding surrounded by friends and family!  We hope that this website will provide you with all the information you need. Below  you will find ceremony and reception details including addresses and directions, accommodation details, and much more.</p>
+                <p>We are so excited to celebrate our wedding surrounded by friends and family! We hope that this website will provide you with all the information you need. Below you will find ceremony and reception details including addresses and directions, accommodation details, and much more.</p>
                 <div class="playlist">
                     <span class="playlist-btn animated"></span>
                     <div class="playlist-body">
@@ -178,7 +208,7 @@
                 <img src="http://res.cloudinary.com/frndcolin/image/upload/v1519797202/wedding-site/img001.jpg">
             </div>
         </section>
-        
+
         <section id="accommodations">
             <div class="container">
                 <h2>Accommodations</h2>
@@ -217,7 +247,7 @@
                             <h4>Pine Hills Country Club</h4>
                         </div>
                         <div class="map-info-content">
-                            <p>The Pavilion is a warm and rustic inspired clubhouse nestled in the rolling hills of the Pinehills community of Plymouth, Ma.  It offers a unique setting with its airy vaulted ceilings, exposed wood beams, and wall of windows overlooking the beautifully manicured golf course.</p>
+                            <p>The Pavilion is a warm and rustic inspired clubhouse nestled in the rolling hills of the Pinehills community of Plymouth, Ma. It offers a unique setting with its airy vaulted ceilings, exposed wood beams, and wall of windows overlooking the beautifully manicured golf course.</p>
                             <div class="map-btns">
                                 <a class="map-info-btn animated" href="#">Directions</a>
                                 <a class="map-info-btn animated" href="#">Web Site</a>
@@ -228,7 +258,7 @@
                 <div id="map"></div>
             </div>
         </section>
-        
+
         <section id="things-to-do" class="grid--2-col">
             <div class="boston grid-item--lft" data-aos="zoom-in-right">
                 <div class="container">
@@ -260,7 +290,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section id="photographs">
             <div class="container">
                 <h2>Photographs</h2>
@@ -308,22 +338,22 @@
 
             </div>
         </section>
-        
+
         <section id="registries">
             <div class="container">
                 <h2>Gift Registries</h2>
                 <div class="registry-list">
-                    <a  class="registry" href="#">
+                    <a class="registry" href="#">
                         <img src="../public/img/bbb.png">
                     </a>
-                    <a  class="registry" href="#">
+                    <a class="registry" href="#">
                         <img src="../public/img/Zola-Logo.png">
                     </a>
                 </div>
             </div>
         </section>
     </main>
-    
+
     <footer>
         <ul class="footer-nav">
             <li class="nav-item"><a href="#events">Events</a></li>
@@ -341,8 +371,8 @@
                 <input type="email" placeholder="e-mail@mail.com">
                 <button type="submit" class="btn frm-btn">Submit</button>
             </form>
-            
-        <p>If you have a question, please contact friendwalsh2018@gmail.com</p>
+
+            <p>If you have a question, please contact friendwalsh2018@gmail.com</p>
         </div>
         <p class="thanks">Special thanks to <a href="#">Ben Boynton Photography</a></p>
     </footer>
@@ -356,7 +386,6 @@
     <script src="../public/js/index.js"></script>
 
     <script>
-        
     </script>
 
     <script>
@@ -374,7 +403,6 @@
                 }
             }
         });
-
     </script>
 
     <script>
@@ -388,9 +416,8 @@
                 this.classList.remove('pulse');
             });
         });
-
     </script>
-    
+
     <script>
         AOS.init({
             disable: window.innerWidth < 720,
@@ -399,14 +426,14 @@
             once: true
         });
     </script>
-    
+
     <script>
         var pineHillsMapInfo = document.querySelector("#pine-hills");
         var hotel1620MapInfo = document.querySelector("#hotel-1620");
         var mapClose = document.querySelectorAll(".map-info-close");
-        
+
         mapClose.forEach(function(closeBtn) {
-            closeBtn.addEventListener('click', function(){
+            closeBtn.addEventListener('click', function() {
                 this.parentNode.classList.add('hide');
                 this.parentNode.classList.remove('show');
             });
