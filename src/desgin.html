@@ -1,119 +1,3 @@
-<html class="fa-events-icons-ready">
-
-<head>
-    <style type="text/css">
-        @charset "UTF-8";
-        [ng\:cloak],
-        [ng-cloak],
-        [data-ng-cloak],
-        [x-ng-cloak],
-        .ng-cloak,
-        .x-ng-cloak,
-        .ng-hide:not(.ng-hide-animate) {
-            display: none !important;
-        }
-
-        ng\:form {
-            display: block;
-        }
-
-        .ng-animate-shim {
-            visibility: hidden;
-        }
-
-        .ng-anchor {
-            position: absolute;
-        }
-
-    </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Playlist</title>
-    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Raleway|Prata" rel="stylesheet">
-    <script src="../public/vendor/zenscroll.min.js"></script>
-    <script src="https://use.fontawesome.com/6de892528c.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/6de892528c.css" media="all">
-    <link rel="stylesheet" href="../public/css/playlist.css">
-    <script src="../public/vendor/angular.min.js"></script>
-</head>
-
-<body ng-app="songApp" class="ng-scope">
-    <h1>Songs that will make you dance!</h1>
-    
-    <div class="songs ng-scope" ng-controller="SongsCtrl">
-        <div class="song-search" ng-controller="SongSearchCntrl" class="ng-scope">
-            
-            <form class="search-form ng-valid ng-dirty ng-valid-parse">
-                <p class="search-msg ng-hide" ng-hide="found">Search for your favorite song to add to the list</p>
-                <div class="form-group">
-                    <label class="sr-only" for="track">Song Title</label>
-                    <input type="text" name="title" ng-model="search.track" ng-change="clearResult()" placeholder="song title" class="ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched">
-                </div>
-                
-                <div class="form-group">
-                    <label class="sr-only" for="artist">Artist</label>
-                    <input type="text" name="artist" ng-model="search.artist" ng-change="clearResult()" placeholder="artist" class="ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched">
-                </div>
-                <button class="btn btn-blue frm-btn" type="submit" ng-click="searchSong(search.track, search.artist, $event)">Search</button>
-            </form>    
-                <div class="search-result" ng-show="found">
-                    <h4 ng-show="error" class="ng-binding ng-hide"></h4>
-                    <h4 ng-hide="error" class="ng-binding">So Cold, Breaking Benjamin - </h4>
-                        <a ng-href="https://www.youtube.com/results?search_query=undefined%20undefined" target="_blank" href="https://www.youtube.com/results?search_query=undefined%20undefined">
-                            <i class="fa fa-youtube-play"></i>   
-                        </a>
-                        <button class="btn btn-grn frm-btn" ng-hide="error" ng-click="addSong(result, $event)">Add Song</button>
-                    
-                </div>
-        </div>
-        
-        <div class="list">
-            
-            <div class="song-list">
-                <table ng-controller="SongListCntrl" class="ng-scope">
-                    <thead>
-                        <tr>
-                            <th> </th>
-                            <th>Song Title</th>
-                            <th>Artist</th>
-                            <th>Total</th>
-                            <th>Vote</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>song title</td>
-                            <td>song artist</td>
-                            <td><span  class='badge'>3</span></td>
-                            <td><button class='btn btn-blue'><i class='fa fa-thumbs-up'></i></button></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>song title</td>
-                            <td>song artist</td>
-                            <td><span  class='badge'>3</span></td>
-                            <td><button class='btn btn-blue'><i class='fa fa-thumbs-up'></i></button></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>song title</td>
-                            <td>song artist</td>
-                            <td><span  class='badge'>3</span></td>
-                            <td>vote</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <script src="../public/js/playlist.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-</body>
-
-</html>
-
-
-<!--
 <html>
 
 <head>
@@ -121,17 +5,14 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no'>
     <base href='www.catirinandcolin.com'>
 
-    <meta name='description' content='...'> link(rel='prefetch' href='...js file'
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Playfair+Display|Raleway:200,400|Prata:200,400" rel="stylesheet">
-    <link rel='stylesheet' href='../public/vendor/normalize.css'>
-    <link rel='stylesheet' href='../public/vendor/animate.css'>
-    <link rel='stylesheet' href='../public/vendor/aos.css'>
+    <link rel='stylesheet' href='../public/css/vendor.min.css'>
     <link rel='stylesheet' href='./css/base.css'>
     <link rel='stylesheet' href='./css/modules.css'>
     <link rel='stylesheet' href='./css/footer.css'>
     <link rel='stylesheet' href='./css/modal.css'>
     <link rel='stylesheet' href='./css/layout.css'>
-    <link rel='stylesheet' href='./css/nav.css'> // Global site tag (gtag.js) - Google Analytics
+    <link rel='stylesheet' href='./css/nav.css'> 
     <script async type='text/javascript' src="https://www.googletagmanager.com/gtag/js?id=UA-109028742-2"></script>
 
 </head>
@@ -378,69 +259,12 @@
     </footer>
 
 
-    <script src="../public/js/display.js"></script>
-    <script src="../public/vendor/aos.js"></script>
-    <script src="../public/vendor/zenscroll.min.js"></script>
+    <script src="../public/js/display.min.js"></script>
+    <script src="../public/vendor/aos.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl5Bletj_g8V6KqWBKJ8ZYCuKkiAD4i1s&callback=initMap" type="text/javascript"></script>
-    <script src="../public/js/g-map.js"></script>
-    <script src="../public/js/index.js"></script>
-
-    <script>
-    </script>
-
-    <script>
-        var granimInstance = new Granim({
-            element: '#canvas-image-blending',
-            direction: 'top-bottom',
-            opacity: [0.3, 0.6],
-            isPausedWhenNotInView: true,
-            states: {
-                "default-state": {
-                    gradients: [
-                        ['#D6A319', '#28324A']
-                    ],
-                    transitionSpeed: 6000
-                }
-            }
-        });
-    </script>
-
-    <script>
-        var btn = document.querySelectorAll('.btn');
-
-        btn.forEach(function(elm) {
-            elm.addEventListener('mouseover', function() {
-                this.classList.add('pulse');
-            });
-            elm.addEventListener('mouseleave', function() {
-                this.classList.remove('pulse');
-            });
-        });
-    </script>
-
-    <script>
-        AOS.init({
-            disable: window.innerWidth < 720,
-            duration: 800,
-            easing: 'ease-in-sine',
-            once: true
-        });
-    </script>
-
-    <script>
-        var pineHillsMapInfo = document.querySelector("#pine-hills");
-        var hotel1620MapInfo = document.querySelector("#hotel-1620");
-        var mapClose = document.querySelectorAll(".map-info-close");
-
-        mapClose.forEach(function(closeBtn) {
-            closeBtn.addEventListener('click', function() {
-                this.parentNode.classList.add('hide');
-                this.parentNode.classList.remove('show');
-            });
-        });
-    </script>
+    <script src="../public/js/g-map.min.js"></script>
+    <script src="../public/js/index.min.js"></script>
 
 </body>
 
 </html>
--->

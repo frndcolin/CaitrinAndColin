@@ -307,12 +307,13 @@ header:before {
     padding: 12px;
     font-weight: 400;
     width: 180px;
-    margin: 20px auto 0;
+    margin: 30px auto 0;
 }
 .playlist.opened {
     height: 270px;
-    width: 100%;
+    width: 90%;
     right: 0;
+    top: 25%;
     padding-left: 0;
 }
 .playlist.opened > .playlist-body {

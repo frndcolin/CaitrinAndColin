@@ -1,0 +1,311 @@
+<html class="fa-events-icons-ready">
+
+<head>
+    <style type="text/css">
+        @charset "UTF-8";
+        [ng\:cloak],
+        [ng-cloak],
+        [data-ng-cloak],
+        [x-ng-cloak],
+        .ng-cloak,
+        .x-ng-cloak,
+        .ng-hide:not(.ng-hide-animate) {
+            display: none !important;
+        }
+
+        ng\:form {
+            display: block;
+        }
+
+        .ng-animate-shim {
+            visibility: hidden;
+        }
+
+        .ng-anchor {
+            position: absolute;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Playlist</title>
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Raleway:200,400" rel="stylesheet">
+    <script src="../public/vendor/zenscroll.min.js"></script>
+    <script src="https://use.fontawesome.com/6de892528c.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/6de892528c.css" media="all">
+    <link rel="stylesheet" href="../public/css/playlist.css">
+    <script src="../public/vendor/angular.min.js"></script>
+</head>
+
+<body ng-app="songApp" class="ng-scope">
+    <header>
+        <a class="home" href="http://www.caitrinandcolin.com"><i class="fa fa-chevron-left"></i> home</a>
+        <h1>Songs that will make you dance!</h1>
+    </header>
+    <main class="songs ng-scope" ng-controller="SongsCtrl">
+        <section id="search" ng-controller="SongSearchCntrl" class="ng-scope">
+            <div class="song-search">
+                <p class="search-msg ng-hide" ng-hide="found">Search for your favorite song to add to the list <i class="fa fa-search"></i></p>
+                <form class="search-form ng-valid ng-dirty ng-valid-parse">
+                    <div class="form-group">
+                        <input type="text" name="title" ng-model="search.track" ng-change="clearResult()" placeholder="song title" class="ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched">
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="artist">Artist</label>
+                        <input type="text" name="artist" ng-model="search.artist" ng-change="clearResult()" placeholder="artist" class="ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched">
+                    </div>
+                    <button class="frm-btn search-btn" type="submit" ng-click="searchSong(search.track, search.artist, $event)">Search</button>
+                </form>
+
+            </div>
+            <div class="search-result">
+                <h4 ng-show="error" class="ng-binding ng-hide"></h4>
+                <h4 class="ng-binding">So Cold, Breaking Benjamin</h4>
+                <a ng-href="https://www.youtube.com/results?search_query=undefined%20undefined" target="_blank" href="https://www.youtube.com/results?search_query=undefined%20undefined">
+                            <i class="fa fa-youtube-play"></i>   
+                </a>
+                <button class="frm-btn submit-btn" ng-hide="error" ng-click="addSong(result, $event)">Add Song</button>
+            </div>
+
+        </section>
+        <section class="playlist" ng-controller="SongListCntrl" class="ng-scope">
+            <div class="song-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th> </th>
+                            <th>Song Title</th>
+                            <th>Artist</th>
+                            <th>Total</th>
+                            <th>Vote</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>songdfs dfsd fd sfsdfdsfsdf dsfdsfdsf title</td>
+                            <td>songdsdfdsfsdf dfdsf dsf sdfdsf artist</td>
+                            <td><span class='badge'>23</span></td>
+                            <td><button class='thumbs-up'><i class='fa fa-thumbs-up'></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span class='badge'>63</span></td>
+                            <td><button class='thumbs-up'><i class='fa fa-thumbs-up'></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span class='badge'>73</span></td>
+                            <td>vote</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span class='badge'>88</span></td>
+                            <td><button class='thumbs-up'><i class='fa fa-thumbs-up'></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span class='badge'>3</span></td>
+                            <td><button class='thumbs-up'><i class='fa fa-thumbs-up'></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span class='badge'>3</span></td>
+                            <td>vote</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span class='badge'>3</span></td>
+                            <td><button class='btn btn-blue'><i class='fa fa-thumbs-up'></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span class='badge'>3</span></td>
+                            <td><button class='btn btn-blue'><i class='fa fa-thumbs-up'></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span class='badge'>3</span></td>
+                            <td>vote</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span class='badge'>3</span></td>
+                            <td><button class='btn btn-blue'><i class='fa fa-thumbs-up'></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span class='badge'>3</span></td>
+                            <td><button class='btn btn-blue'><i class='fa fa-thumbs-up'></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span class='badge'>3</span></td>
+                            <td>vote</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span class='badge'>3</span></td>
+                            <td><button class='btn btn-blue'><i class='fa fa-thumbs-up'></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span class='badge'>3</span></td>
+                            <td><button class='btn btn-blue'><i class='fa fa-thumbs-up'></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span class='badge'>3</span></td>
+                            <td>vote</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span class='badge'>3</span></td>
+                            <td><button class='btn btn-blue'><i class='fa fa-thumbs-up'></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span class='badge'>3</span></td>
+                            <td><button class='btn btn-blue'><i class='fa fa-thumbs-up'></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span class='badge'>3</span></td>
+                            <td>vote</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span class='badge'>3</span></td>
+                            <td><button class='btn btn-blue'><i class='fa fa-thumbs-up'></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span class='badge'>3</span></td>
+                            <td><button class='btn btn-blue'><i class='fa fa-thumbs-up'></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span class='badge'>3</span></td>
+                            <td>vote</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+
+    <!--
+    <div class="songs ng-scope" ng-controller="SongsCtrl">
+        <div class="song-search" ng-controller="SongSearchCntrl" class="ng-scope">
+
+            <form class="search-form ng-valid ng-dirty ng-valid-parse">
+                <p class="search-msg ng-hide" ng-hide="found">Search for your favorite song to add to the list</p>
+                <div class="form-group">
+                    <label class="sr-only" for="track">Song Title</label>
+                    <input type="text" name="title" ng-model="search.track" ng-change="clearResult()" placeholder="song title" class="ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched">
+                </div>
+
+                <div class="form-group">
+                    <label class="sr-only" for="artist">Artist</label>
+                    <input type="text" name="artist" ng-model="search.artist" ng-change="clearResult()" placeholder="artist" class="ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched">
+                </div>
+                <button class="btn btn-blue frm-btn" type="submit" ng-click="searchSong(search.track, search.artist, $event)">Search</button>
+            </form>
+            <div class="search-result">
+                <h4 ng-show="error" class="ng-binding ng-hide"></h4>
+                <div class="result">
+                    <h4 class="ng-binding">So Cold, Breaking Benjamin - </h4>
+                    <a ng-href="https://www.youtube.com/results?search_query=undefined%20undefined" target="_blank" href="https://www.youtube.com/results?search_query=undefined%20undefined">
+                            <i class="fa fa-youtube-play"></i>   
+                        </a>
+                </div>
+                <button class="btn btn-grn frm-btn" ng-hide="error" ng-click="addSong(result, $event)">Add Song</button>
+
+            </div>
+        </div>
+
+        <div class="list">
+
+            <div class="song-list">
+                <table ng-controller="SongListCntrl" class="ng-scope">
+                    <thead>
+                        <tr>
+                            <th> </th>
+                            <th>Song Title</th>
+                            <th>Artist</th>
+                            <th>Total</th>
+                            <th>Vote</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span class='badge'>3</span></td>
+                            <td><button class='btn btn-blue'><i class='fa fa-thumbs-up'></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span class='badge'>3</span></td>
+                            <td><button class='btn btn-blue'><i class='fa fa-thumbs-up'></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>song title</td>
+                            <td>song artist</td>
+                            <td><span class='badge'>3</span></td>
+                            <td>vote</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+-->
+    <script src="../public/js/playlist.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+
+</html>

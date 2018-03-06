@@ -1,34 +1,43 @@
 doctype html
 html
-    head
+    head(lang='en')
+        meta(charset='utf-8')
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        title Wedding Playlist
-        link(href="https://fonts.googleapis.com/css?family=Great+Vibes|Raleway|Prata" rel="stylesheet")
-        script(src="vendor/zenscroll.min.js")
-        script(src="https://use.fontawesome.com/6de892528c.js")
+        meta(name='description' content="Wedding playlist voting app for Caitrin and Colin's wedding")
+        
+        title Caitrin and Colin are getting married!
+        
+        link(href="https://fonts.googleapis.com/css?family=Great+Vibes|Raleway:200,400" rel="stylesheet")
+        link(rel="stylesheet" href="https://use.fontawesome.com/6de892528c.css" media="all")
         link(rel='stylesheet' href='./css/playlist.css')
+        
+        script(async type='text/javascript' src='https://www.googletagmanager.com/gtag/js?id=UA-109028742-2') 
+        script(src="https://use.fontawesome.com/6de892528c.js")
         script(src="./vendor/angular.min.js")
     body(ng-app='songApp')
-        .songs(ng-controller='SongsCtrl')
+        header
+            a.home(href="http://www.caitrinandcolin.com") #[i(class="fa fa-chevron-left")] home
             h1 Songs that will make you dance!
-            .song-search(ng-controller="SongSearchCntrl")
-                form.search-form
-                    .form-group
-                        label.sr-only(for="track") Song Title
-                        input(type='text' name='title' ng-model="search.track" ng-change="clearResult()" placeholder="song title")
-                    .form-group
-                        label.sr-only(for="artist") Artist
-                        input(type='text' name='artist' ng-model="search.artist" ng-change="clearResult()" placeholder="artist")
-                    button.btn.btn-blue(type='submit' ng-click="searchSong(search.track, search.artist, $event)") Search
-                    .search-result(ng-show="found")
-                        h4(ng-show="error") {{errorMsg}}
-                        h4(ng-hide="error") {{result.title}}, {{result.artist}} - 
-                        a(ng-hide='error' ng-href='{{result.link}}' target="_blank"): i.fa.fa-youtube-play   
-                        button.btn.btn-grn(ng-hide='error' ng-click='addSong(result, $event)') Add Song
-                    p.search-msg(ng-hide='found') Search for your favorite song to add to the list
-            .list
+        main(class="songs ng-scope" ng-controller="SongsCtrl")
+            section#search(ng-controller="SongSearchCntrl")
+                .song-search
+                    p(class="search-msg" ng-hide="found") Search for your favorite song to add to the list
+                    p(class="search-msg" ng-show="found") Click here to search again
+                        i.fa.fa-search(ng-show="found"  ng-click="clearResult()")
+                    form(class="search-form" ng-hide="found")
+                        .form-group
+                            input(type="text" name="title" ng-model="search.track" placeholder="song title")
+                        .form-group
+                            input(type="text" name="artist" ng-model="search.artist" placeholder="artist")
+                        button(class="frm-btn search-btn" type="submit" ng-click="searchSong(search.track, search.artist, $event)") Search
+                .search-result(ng-show="found")
+                    h4(ng-show="error") {{ errorMsg }}
+                    h4(ng-hide="error") {{ result.title }}, {{ result.artist }}
+                    a(ng-href="{{result.link}}" target="_blank" ng-hide="error"): i.fa.fa-youtube-play
+                    button(class="frm-btn submit-btn" ng-hide="error" ng-click="addSong(result, $event)") Add Song
+            section.playlist(ng-controller="SongListCntrl")        
                 .song-list
-                    table(ng-controller="SongListCntrl")
+                    table
                         thead
                             tr
                                 th  
@@ -37,12 +46,17 @@ html
                                 th Total
                                 th Vote
                         tbody
-                            tr(ng-repeat="song in songs | orderBy:'+title'")
-                                td {{$index + 1}}
-                                td: a(ng-href='{{song.link}}' target='_blank') {{song.title}}
-                                td {{song.artist}}
-                                td: span.badge(ng-model='song.votes') {{song.votes}}
+                            tr(ng-repeat="song in songs")
+                                td {{ $index + 1 }}
+                                td: a(ng-href='{{song.link}}' target='_blank') {{ song.title }}
+                                td {{ song.artist }}
+                                td: span.badge(ng-model='song.votes') {{ song.votes }}
                                 td
-                                    button.btn.btn-blue(type='button' ng-click='addVote(song._id, $event)' ng-disabled="voted > 9"): i.fa.fa-thumbs-up    
+                                    button.thumbs-up(ng-click='addVote(song._id, $event)' ng-disabled="voted > 9"): i.fa.fa-thumbs-up    
     script(src='./js/playlist.js')
     script(src="https://unpkg.com/axios/dist/axios.min.js")
+    script.
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-109028742-2');
