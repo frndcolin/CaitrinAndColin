@@ -282,9 +282,17 @@ header:before {
     color: var(--white);
     padding: 0;
     width: 280px;
-    margin: 30px auto 40px;
+    margin: 40px auto;
 }
-
+.playlist-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 30px;
+    width: 30px;
+    background-image: url('../img/close.svg');
+    background-size: contain;
+}
 .playlist-body > h3 {
     font-size: inherit;
     font-weight: 200;
@@ -299,13 +307,13 @@ header:before {
     padding: 12px;
     font-weight: 400;
     width: 180px;
-    margin: 0 auto;
+    margin: 20px auto 0;
 }
 .playlist.opened {
     height: 270px;
-    width: 330px;
-    top: 53%;
+    width: 100%;
     right: 0;
+    padding-left: 0;
 }
 .playlist.opened > .playlist-body {
     height: auto;
@@ -314,6 +322,10 @@ header:before {
     .playlist {
         position: fixed;
         top:35%;
+    }
+    .playlist.opened {
+        width: 330px;
+        top: 53%;
     }
 }
 /*-----------------------------------------------------------------------*/

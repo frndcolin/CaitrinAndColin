@@ -34,6 +34,9 @@ section {
     width: 100%;
     position: relative;
 }
+section#registries {
+    max-height: 50vh;
+}
 h1 {
     font-size: calc(54px + (100 - 54) * ((100vw - 300px) / (1600 - 300)));
     font-family: 'Playfair Display', serif;

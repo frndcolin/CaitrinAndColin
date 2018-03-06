@@ -6,8 +6,9 @@ html(lang='en')
     head
         meta(charset='utf-8')
         meta(name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
-        meta(name='description' content='...')
-        //-   <!-- link(rel='prefetch' href='...js file'-->
+        meta(name='description' content='Wedding website for Caitrin Walsh and Colin Friend. Caitrin and Colin are getting married!')
+        
+        title Caitrin and Colin are getting married!
         
         link(href='https://fonts.googleapis.com/css?family=Great+Vibes|Raleway:200,400|Playfair+Display' rel='stylesheet' type="text/css" async)
         link(rel='stylesheet' href='./css/vendor.min.css' type="text/css")
@@ -43,9 +44,9 @@ html(lang='en')
                     h2 Gift Registries
                     .registry-list
                         a(class='registry' href='https://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?registryId=545165790&eventType=Wedding&pwsurl' target='_blank')
-                            img(src='./img/bbb.png')
+                            img(src='./img/bbb-min.png')
                         a(class='registry' href='https://www.zola.com/registry/caitrinandcolin' target='_blank')
-                            img(src='./img/Zola-Logo.png')
+                            img(src='./img/Zola-Logo-min.png')
         footer   
             ul.footer-nav
                 li.nav-item: a(href="#events") Events
@@ -58,15 +59,19 @@ html(lang='en')
                 li.nav-item: a(href="http://www.caitrinandcolin.com/playlist") Playlist App
             .footer-content
                 p Sign up to be notified of any updates!
-                form
-                    input(type="email" placeholder="e-mail@mail.com" required)
+                h4.formMsg
+                form(id='emailForm')
+                    input(type="email" id="email" name="email" placeholder="e-mail@mail.com" required)
                     button(type="submit" class="btn frm-btn") Submit
+                p If you have a question, please contact 
+                    a(href='mailto:caitrinandcolin2018@gmail.com?Subject=I%20have%20a%20question') caitrinandcolin2018@gmail.com
             p.thanks Special thanks to #[a(href="https://benboyntonphotography.com/" target='_blank') Ben Boynton Photography]
     script(src="./vendor/aos.min.js")
     script(src="./js/index.min.js")
     script(src="./js/display.min.js")
     script(src="./js/g-map.min.js")
     script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl5Bletj_g8V6KqWBKJ8ZYCuKkiAD4i1s&callback=initMap" type="text/javascript")
+    script(src="https://unpkg.com/axios/dist/axios.min.js" async defer)
     script.
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
