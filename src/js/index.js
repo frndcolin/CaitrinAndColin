@@ -464,10 +464,14 @@ function initMap() {
         });
     });
 
+    
+    
     var playlist = document.querySelector('.playlist');
     var playbtn = document.querySelector('.playlist-btn');
     var playlistClose = document.querySelector('.playlist-close');
-
+    var banner = document.querySelector('header');
+    var beenViewed = false;
+    
     playbtn.addEventListener('click', function () {
         playlist.classList.toggle('opened');
     });
@@ -480,17 +484,33 @@ function initMap() {
     playlistClose.addEventListener('click', function () {
         playlist.classList.toggle('opened');
     });
-    var page = document.querySelector('#page');
-
-    function closeOpenedWindows() {
+    
+    function closeOpenedWindow() {
         if (playlist.classList.contains('opened')) {
             playlist.classList.toggle('opened');
         }
     }
-
+    function isInView(elementToCheck) {
+        var bnrHt = banner.clientHeight;
+        var target = elementToCheck.getBoundingClientRect().top + bnrHt;
+        var screenHt = screen.height;
+        
+        if (target > screenHt) {
+            return false;
+        }
+        else if (target < screenHt - (screenHt - 50)){
+            return true;
+        }
+    }
     window.onscroll = function () {
-        closeOpenedWindows()
+        if (isInView(banner) && !beenViewed) {
+                playlist.classList.add('opened');
+                setTimeout(function () {
+                    playlist.classList.remove('opened');
+                    beenViewed = true;
+                }, 2500);
+        } else {
+            closeOpenedWindow();   
+        }
     };
-
-
 }());

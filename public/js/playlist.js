@@ -55,7 +55,7 @@
                                 genre: [],
                                 votes: 0
                             };
-                            var ytURL = 'https://content.googleapis.com/youtube/v3/search?type=video&q=' + newSong.title + '&maxResults=5&part=snippet&key=AIzaSyAkeOuOoquw23koH3l_cm-A09TvulFO20Q';
+                            var ytURL = 'https://content.googleapis.com/youtube/v3/search?type=video&q=' + newSong.link + '&maxResults=5&part=snippet&key=AIzaSyAkeOuOoquw23koH3l_cm-A09TvulFO20Q';
                             $http.get(ytURL).then(function (resp) {
                                 var id = resp.data.items[0].id.videoId;
                                 newSong.link = 'https://www.youtube.com/watch?v=' + id;

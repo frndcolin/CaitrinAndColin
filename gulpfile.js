@@ -36,7 +36,7 @@ gulp.task('playlist-css', function () {
 });
 
 gulp.task("g-bab", function () {
-  return gulp.src("src/js/**.js")
+  return gulp.src("src/js/index.js")
     .pipe(babel())
     .pipe(gulp.dest("public/js"));
 });
