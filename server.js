@@ -3,6 +3,7 @@ const express    = require('express');
 const bodyParser = require('body-parser');
 const favicon    = require('express-favicon');
 const compression = require('compression');
+const helmet     = require('helmet');
 const path       = require('path');
 const pug        = require('pug');
 const app        = express();
@@ -19,6 +20,7 @@ app.set('view engine', 'pug');
 
 
 app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(compression());
@@ -41,14 +43,3 @@ app.use('/playlist', playlist);
 app.listen(port, function() {
     console.log(`Server is running on ${port}...`);
 });
-
-
-
-
-//=================TODO================
-// header bg
-// nav on small screen
-// load time
-// song search - list first then api
-// modal close
-// open/closing playlist window

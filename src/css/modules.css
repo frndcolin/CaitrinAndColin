@@ -253,7 +253,7 @@ header:before {
     overflow: hidden;
     padding: 20px 0 0 30px;
     height: 40px;
-    z-index: 700;
+    z-index: 450;
     transform-origin: top right;
     transform: translateX(310px);
     transition: all 0.3s;
