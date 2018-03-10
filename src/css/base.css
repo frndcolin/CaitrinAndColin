@@ -20,7 +20,7 @@ header {
     max-height: calc((9 / 16) * 100%);
     width: 100%;
     overflow: hidden;
-    z-index: 888;
+    z-index: 500;
 }
 main {
     overflow: hidden;
