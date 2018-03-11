@@ -20,6 +20,7 @@ function initMap() {
         gestureHandling: 'cooperative',
         mapTypeControl: false,
         streetViewControl: false,
+        zoomControl: false,
         zoom: 10,
         styles: [
             {

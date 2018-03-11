@@ -23,6 +23,8 @@ function initMap() {
         gestureHandling: 'cooperative',
         mapTypeControl: false,
         streetViewControl: false,
+        disableDefaultUI: true,
+        zoomControl: false,
         zoom: 10,
         styles: [
             {
