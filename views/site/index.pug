@@ -10,11 +10,28 @@ html(lang='en')
         
         title Caitrin and Colin are getting married!
         
+        link(name='theme-color' content='#28324A')
         link(href='https://fonts.googleapis.com/css?family=Great+Vibes|Raleway:200,400|Playfair+Display' rel='stylesheet' type="text/css" async)
         link(rel='stylesheet' href='./css/vendor.min.css' type="text/css" async)
         link(rel='stylesheet' href='./css/bundled.min.css' type="text/css" async)
         //-    <!--        // Global site tag (gtag.js) - Google Analytics-->
-        script(async type='text/javascript' src='https://www.googletagmanager.com/gtag/js?id=UA-109028742-2')    
+        script(async type='text/javascript' src='https://www.googletagmanager.com/gtag/js?id=UA-109028742-2')  
+        link(rel='icon' href='./icon-128.png' sizes='128x128')
+        link(rel='icon' href='./icon-64.png' sizes='64x64')
+        link(rel='icon' href='./icon-32.png' sizes='32x32')
+        link(rel='icon' href='./icon-16.png' sizes='16x16')
+        style.
+            header {
+                background-color: #28324A;
+                background-position: center bottom;
+                margin: 0;
+                padding: 0;
+                position: relative;
+                height: 100vh;
+                width: 100%;
+                overflow: hidden;
+                z-index: 500;
+            }
     body
         header
             nav#main(class='menu')
@@ -43,9 +60,9 @@ html(lang='en')
                 .container
                     h2 Gift Registries
                     .registry-list
-                        a(class='registry' href='https://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?registryId=545165790&eventType=Wedding&pwsurl' target='_blank')
+                        a(class='registry' href='https://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?registryId=545165790&eventType=Wedding&pwsurl' rel='noopener' target='_blank')
                             img(src='./img/bbb-min.png')
-                        a(class='registry' href='https://www.zola.com/registry/caitrinandcolin' target='_blank')
+                        a(class='registry' href='https://www.zola.com/registry/caitrinandcolin' rel='noopener' target='_blank')
                             img(src='./img/Zola-Logo-min.png')
         footer   
             ul.footer-nav
@@ -54,8 +71,8 @@ html(lang='en')
                 li.nav-item: a(href="#things-to-do") Things To Do
                 li.nav-item: a(href="#photographs") Photographs
                 li.nav-item: a(href="#registries") Gift Registries
-                li.nav-item: a(href="http://pinehillspaviliongrille.com/pavilion/weddings/" target='_blank') Pinehills
-                li.nav-item: a(href="https://www.hotel1620.com/" target='_blank') Hotel 1620
+                li.nav-item: a(href="http://pinehillspaviliongrille.com/pavilion/weddings/" rel='noopener' target='_blank') Pinehills
+                li.nav-item: a(href="https://www.hotel1620.com/" rel='noopener' target='_blank') Hotel 1620
                 li.nav-item: a(href="/playlist") Playlist App
             .footer-content
                 p Sign up to be notified of any updates!
@@ -65,7 +82,7 @@ html(lang='en')
                     button(type="submit" class="btn frm-btn") Submit
                 p If you have a question, please contact 
                     a(href='mailto:caitrinandcolin2018@gmail.com?Subject=I%20have%20a%20question') caitrinandcolin2018@gmail.com
-            p.thanks Special thanks to #[a(href="https://benboyntonphotography.com/" target='_blank') Ben Boynton Photography]
+            p.thanks Special thanks to #[a(href="https://benboyntonphotography.com/" rel="noopener"  target="_blank") Ben Boynton Photography]
     script(src="./vendor/aos.min.js")
     script(src="./js/index.min.js")
     script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl5Bletj_g8V6KqWBKJ8ZYCuKkiAD4i1s&callback=initMap" type="text/javascript")

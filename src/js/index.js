@@ -363,29 +363,28 @@ function initMap() {
     //                      EMAIL FORM HANDLER                                             ///
     //-------------------------------------------------------------------------------------///    
     var emailForm = document.querySelector('form#emailForm');
-    var frmBtn = document.querySelector('button.frm-btn');
     var formMsg = document.querySelector('.formMsg');
 
-    // CAPTURE FORM SUBMISSION AND UPDATE DB
-    frmBtn.addEventListener('click', function (e) {
+    function submitEmail (e) {
         e.preventDefault();
-        e.stopPropagation();
-        var email = document.querySelector('input#email');
-        axios.post('/addEmail', {
-                email: email.value
-            })
+        var email = emailForm.querySelector('input#email');
+        
+        axios.post('/addEmail', { email: email.value })
             .then(function (resp) {
                 if (resp.status === 200 && resp.data === "success") {
                     emailForm.style.display = 'none';
                     formMsg.style.display = 'block';
                     formMsg.innerHTML = "Thanks! We'll keep you up to date!";
                 }
-                console.log(resp.data);
             })
             .catch(function (err) {
                 alert(err);
             });
-    });
+        emailForm.reset();   
+    }
+    
+    // CAPTURE FORM SUBMISSION AND UPDATE DB
+    emailForm.addEventListener('submit', submitEmail);
 
 
 

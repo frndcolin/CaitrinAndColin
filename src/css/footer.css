@@ -1,6 +1,6 @@
 footer {
     background-color: var(--white);
-    background-image: linear-gradient(rgba(30, 40, 64, 0.85), rgba(30, 40, 64, 0.75)), url("http://res.cloudinary.com/frndcolin/image/upload/s--mlJkgeRP--/f_auto,q_jpegmini:2/v1519797279/wedding-site/squirrel.jpg");
+    background-image: linear-gradient(rgba(30, 40, 64, 0.85), rgba(30, 40, 64, 0.75)), url("https://res.cloudinary.com/frndcolin/image/upload/s--mlJkgeRP--/f_auto,q_jpegmini:2/v1519797279/wedding-site/squirrel.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
