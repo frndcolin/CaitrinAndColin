@@ -2,7 +2,7 @@
 
 (function () {
     var songApp = angular.module('songApp', []);
-    var url = 'http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=3b1290c0aeeec4b9937434d3b63bb229';
+    var url = 'https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=3b1290c0aeeec4b9937434d3b63bb229';
 
     var songList = [];
 
