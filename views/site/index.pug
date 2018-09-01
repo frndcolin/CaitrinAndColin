@@ -13,8 +13,9 @@ html(lang='en')
         link(name='theme-color' content='#28324A')
         link(href='https://fonts.googleapis.com/css?family=Great+Vibes|Raleway:200,400|Playfair+Display' rel='stylesheet' type="text/css" async)
         link(rel='stylesheet' href='./css/vendor.min.css' type="text/css" async)
-        link(rel='stylesheet' href='./css/bundled.min.css' type="text/css" async)
-        //-    <!--        // Global site tag (gtag.js) - Google Analytics-->
+        link(rel='stylesheet' href='./css/bundled.min.css' type="text/css" async)  
+
+        //   Global site tag (gtag.js) - Google Analytics
         script(async type='text/javascript' src='https://www.googletagmanager.com/gtag/js?id=UA-109028742-2')  
         link(rel='icon' href='./icon-128.png' sizes='128x128')
         link(rel='icon' href='./icon-64.png' sizes='64x64')
@@ -82,11 +83,14 @@ html(lang='en')
                     button(type="submit" class="btn frm-btn") Submit
                 p If you have a question, please contact 
                     a(href='mailto:caitrinandcolin2018@gmail.com?Subject=I%20have%20a%20question') caitrinandcolin2018@gmail.com
-            p.thanks Special thanks to #[a(href="https://benboyntonphotography.com/" rel="noopener"  target="_blank") Ben Boynton Photography]
-    script(src="./vendor/aos.min.js")
-    script(src="./js/index.min.js")
-    script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl5Bletj_g8V6KqWBKJ8ZYCuKkiAD4i1s&callback=initMap" type="text/javascript")
-    script(src="https://unpkg.com/axios/dist/axios.min.js" async defer)
+            p.thanks Special thanks to #[a(href="https://benboyntonphotography.com/" rel="noopener"  target="_blank") Ben Boynton Photography]    
+    
+    
+    <script scr="./vendor/aos.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl5Bletj_g8V6KqWBKJ8ZYCuKkiAD4i1s&callback=initMap" type="text/javascript"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js" async defer></script>
+    <script src="./js/index.min.js"></script>
+    
     script.
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}

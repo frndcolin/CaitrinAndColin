@@ -15,7 +15,8 @@ router.post('/addEmail', function(req, res) {
     },((err)=>{
         console.log(err);
     }));
-}); 
+});
+
 /* GET home page. */
 router.get('/', function (req, res) {
     res.render('site/index', { title: 'Caitrin & Colin are getting married!' });

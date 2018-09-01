@@ -4,6 +4,9 @@ var DateTime = self.luxon.DateTime,
     theBigDay = DateTime.fromISO('2018-12-01T17:30:00');
 
 function checkNum(num) {
+    if(num <= 0) { 
+        num = 0
+    }
     return num < 10 ? `0${num}` : num;
 }
 
